@@ -123,6 +123,10 @@ flutter:
     - family: GT-Walsheim-Regular
       fonts:
         - asset: assets\fonts\GT-Walsheim-Regular-Trial.otf
+        - asset: assets\fonts\HelveticaNeueMedium.otf
+        - asset: assets\fonts\HelveticaNeueLight.otf
+        - asset: assets\fonts\HelveticaNeueRoman.otf
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
