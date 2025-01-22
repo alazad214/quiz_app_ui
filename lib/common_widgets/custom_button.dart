@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants/app_colors.dart';
 import '../constants/text_font_style.dart';
 
-
 Widget customButton(
     {required String name,
     required VoidCallback onCallBack,
@@ -25,8 +24,8 @@ Widget customButton(
       padding: padding ?? EdgeInsets.all(0),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          color: color ?? AppColors.primaryColor,
-          borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
+          color: color ?? const Color.fromARGB(255, 30, 221, 192),
+          borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
           border: Border.all(
             color: borderColor ?? AppColors.primaryColor,
           )),

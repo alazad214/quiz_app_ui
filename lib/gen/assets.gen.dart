@@ -19,8 +19,23 @@ class $AssetsFontsGen {
   String get gTWalsheimRegularTrial =>
       'assets/fonts/GT-Walsheim-Regular-Trial.otf';
 
+  /// File path: assets/fonts/HelveticaNeueLight.otf
+  String get helveticaNeueLight => 'assets/fonts/HelveticaNeueLight.otf';
+
+  /// File path: assets/fonts/HelveticaNeueMedium.otf
+  String get helveticaNeueMedium => 'assets/fonts/HelveticaNeueMedium.otf';
+
+  /// File path: assets/fonts/HelveticaNeueRoman.otf
+  String get helveticaNeueRoman => 'assets/fonts/HelveticaNeueRoman.otf';
+
   /// List of all assets
-  List<String> get values => [dMSansRegular, gTWalsheimRegularTrial];
+  List<String> get values => [
+        dMSansRegular,
+        gTWalsheimRegularTrial,
+        helveticaNeueLight,
+        helveticaNeueMedium,
+        helveticaNeueRoman
+      ];
 }
 
 class $AssetsIconsGen {
@@ -132,6 +147,18 @@ class $AssetsImagesGen {
   AssetGenImage get sliderImage =>
       const AssetGenImage('assets/images/slider_image.png');
 
+  /// File path: assets/images/welcome_background.png
+  AssetGenImage get welcomeBackground =>
+      const AssetGenImage('assets/images/welcome_background.png');
+
+  /// File path: assets/images/welcome_image.png
+  AssetGenImage get welcomeImage =>
+      const AssetGenImage('assets/images/welcome_image.png');
+
+  /// File path: assets/images/welcome_logo.png
+  AssetGenImage get welcomeLogo =>
+      const AssetGenImage('assets/images/welcome_logo.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         applogo,
@@ -142,7 +169,10 @@ class $AssetsImagesGen {
         pdf,
         placeholderImage,
         profileAvatar,
-        sliderImage
+        sliderImage,
+        welcomeBackground,
+        welcomeImage,
+        welcomeLogo
       ];
 }
 
