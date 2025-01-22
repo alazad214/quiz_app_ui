@@ -90,6 +90,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/success.png
   AssetGenImage get success => const AssetGenImage('assets/icons/success.png');
 
+  /// File path: assets/icons/tripple_arrow.png
+  AssetGenImage get trippleArrow =>
+      const AssetGenImage('assets/icons/tripple_arrow.png');
+
   /// List of all assets
   List<dynamic> get values => [
         googlePng,
@@ -106,12 +110,17 @@ class $AssetsIconsGen {
         profile,
         searchNormal,
         search,
-        success
+        success,
+        trippleArrow
       ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/On_boarding_logo.png
+  AssetGenImage get onBoardingLogo =>
+      const AssetGenImage('assets/images/On_boarding_logo.png');
 
   /// File path: assets/images/applogo.png
   AssetGenImage get applogo => const AssetGenImage('assets/images/applogo.png');
@@ -161,6 +170,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        onBoardingLogo,
         applogo,
         docuDrive,
         errorImage,

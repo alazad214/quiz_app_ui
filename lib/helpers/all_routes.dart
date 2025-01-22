@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:mehdi0605/features/authentication/presentation/forget_password_screen.dart';
 
 import '../features/authentication/presentation/login_screen.dart';
 import '../features/authentication/presentation/signup_screen.dart';
@@ -12,6 +13,7 @@ final class Routes {
 
   static const String login = '/login_screen';
   static const String signup = '/signup_screen';
+  static const String forgetPassword = '/forget_password_screen';
 }
 
 final class RouteGenerator {
@@ -35,6 +37,14 @@ final class RouteGenerator {
               widget: const SignupScreen(), settings: settings);
         } else {
           return CupertinoPageRoute(builder: (context) => const SignupScreen());
+        }
+      case Routes.forgetPassword:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: const ForgetPassword(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) => const ForgetPassword());
         }
 
       default:

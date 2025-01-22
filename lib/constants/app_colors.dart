@@ -5,11 +5,10 @@ class AppColors {
   static const Color primaryColor = Color(0xFF00BFA6);
   static const Color primaryColor2 = Color(0xFF507687);
   static const Color secondaryColor = Color(0xFFED2D6B);
-  static const Color secondaryColor2 = Color(0xFF384B70);
-  static const Color bgColor = Color.fromARGB(255, 255, 255, 230);
-  static const Color cButtonColor = Color(0xFF16846d);
+  static const Color secondaryColor2 = Color.fromRGBO(56, 75, 112, 1);
+  static const Color cButtonColor = Color(0xFF54D4C3);
   static const Color cButton = Color(0xFFEC8305);
-  static const Color scaffoldBackground = Color(0xFF1A4870);
+  static const Color scaffoldBackground = Color(0xFFFFFFFF);
   static const Color c4B4B4B = Color(0xFF4B4B4B);
   static const Color c000000 = Color(0xFF000000);
   static const Color c0D1E40 = Color(0xFF0D1E40);
@@ -36,4 +35,6 @@ class AppColors {
   static const Color c2C2126 = Color(0xFF2C2126);
   static const Color cE3F7FB = Color(0xFFE3F7FB);
   static const Color cF5F5F5 = Color(0xFFF5F5F5);
+  static const Color c767676 = Color(0xFF767676);
+  static const Color cC0C0C0C = Color(0xFFC0C0C0);
 }
