@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
-import 'package:mehdi0605/gen/fonts.gen.dart';
 import '../../../gen/assets.gen.dart';
+import 'package:slider_button/slider_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -58,21 +57,39 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           Positioned(
-            bottom: 68,
-            left: 25,
-            right: 25,
-            child: Container(
-              decoration: BoxDecoration(
-                color: AppColors.primaryColor,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              height: 56,
-              // Remove width constraint
-              // width: MediaQuery.of(context).size.width,
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: customButton(
-                    name: 'Get Started', onCallBack: () {}, context: context),
+            bottom: 88,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: SliderButton(
+                action: () async {
+                  ///Do something here OnSlide
+                  return true;
+                },
+
+                ///Put label over here
+                label: Text(
+                  "Get Started!",
+                  style: TextStyle(
+                      color: Color(0xff4a4a4a),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 17),
+                ),
+                icon: Center(
+                    child: Icon(
+                  Icons.power_settings_new,
+                  color: Colors.white,
+                  size: 40.0,
+                  semanticLabel: 'Text to announce in accessibility modes',
+                )),
+
+                ///Change All the color and size from here.
+                width: 380,
+                radius: 16,
+                buttonColor: const Color.fromARGB(255, 0, 191, 150),
+                backgroundColor: AppColors.primaryColor,
+                // highlightedColor: Colors.white,
+                baseColor: const Color.fromARGB(255, 7, 6, 6),
               ),
             ),
           ),
