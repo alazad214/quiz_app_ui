@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:get/get.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
@@ -9,14 +9,14 @@ import 'package:mehdi0605/helpers/ui_helpers.dart';
 
 import '../../../helpers/all_routes.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class ForgetPassword extends StatefulWidget {
+  const ForgetPassword({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgetPassword> createState() => _ForgetPasswordState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ForgetPasswordState extends State<ForgetPassword> {
   bool _is_checked = false;
   @override
   Widget build(BuildContext context) {
@@ -101,9 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                     TextButton(
-                      onPressed: () {
-                        NavigationService.navigateTo(Routes.forgetPassword);
-                      },
+                      onPressed: () {},
                       child: Text('Forget Password?',
                           style: TextFontStyle.textStyle16w400c00BFA6),
                     ),

@@ -12,7 +12,7 @@ final class UIHelper {
   static final double _verticalSpaceSmall = 10.0.w;
   static final double _verticalSpaceMedium = 20.0.w;
   // ignore: unused_field
-  static final double _verticalSpaceMediumLarge = 25.0.w;
+  static final double _verticalSpaceMediumLarge = 24.0.w;
   static final double _verticalSpaceSemiLarge = 40.0.w;
   static final double _verticalSpaceLarge = 60.0.w;
   static final double _verticalSpaceExtraLarge = 100.0.w;

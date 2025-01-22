@@ -5,7 +5,6 @@ import 'package:mehdi0605/constants/app_colors.dart';
 
 import '../constants/text_font_style.dart';
 
-
 class CustomTextfield extends StatelessWidget {
   final String? hintText;
   final String? labelText;
