@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
@@ -17,26 +16,37 @@ class ForgetPassword extends StatefulWidget {
 }
 
 class _ForgetPasswordState extends State<ForgetPassword> {
-  bool _is_checked = false;
+  bool _obscureText1 = false;
+  bool _obscureText2 = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: 100),
+          SizedBox(height: 100.h),
           Padding(
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.all(24.sp),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Login to your account',
+                Text('Create a strong passowrd',
                     style: TextFontStyle.textStyle24w700c333333),
-                UIHelper.verticalSpace(8.h),
-                Text('Welcome Back to Heilprakt!',
-                    style: TextFontStyle.textStyle16w400c767676),
-                UIHelper.verticalSpace(24.h),
+                UIHelper.verticalSpaceMedium,
                 TextFormField(
+                  obscureText: !_obscureText1,
                   decoration: InputDecoration(
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _obscureText1 = !_obscureText1;
+                        });
+                      },
+                      child: Icon(
+                        _obscureText1 ? Icons.visibility : Icons.visibility_off,
+                        color: AppColors.cC0C0C0C,
+                      ),
+                    ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.r),
                       borderSide: const BorderSide(
@@ -49,14 +59,26 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                         color: AppColors.cC0C0C0,
                       ),
                     ),
-                    hintText: 'Enter email',
+                    hintText: 'Enter Password',
                     hintStyle:
                         TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
                   ),
                 ),
                 UIHelper.verticalSpaceMedium,
                 TextFormField(
+                  obscureText: !_obscureText2,
                   decoration: InputDecoration(
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _obscureText2 = !_obscureText2;
+                        });
+                      },
+                      child: Icon(
+                        _obscureText2 ? Icons.visibility : Icons.visibility_off,
+                        color: AppColors.cC0C0C0C,
+                      ),
+                    ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.r),
                       borderSide: const BorderSide(
@@ -69,60 +91,22 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                         color: AppColors.cC0C0C0,
                       ),
                     ),
-                    hintText: 'Enter password',
+                    hintText: 'Repeat Password',
                     hintStyle:
                         TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
                   ),
                 ),
                 UIHelper.verticalSpaceMedium,
                 customButton(
-                    borderRadius: 16.r,
-                    name: 'Sign In',
-                    textStyle: TextFontStyle.textStyle16w500cFFFFFF,
-                    onCallBack: () {},
-                    context: context),
-                UIHelper.verticalSpaceMedium,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
-                          checkColor: AppColors.c333333,
-                          value: _is_checked,
-                          onChanged: (val) {
-                            setState(() {
-                              _is_checked = val!;
-                            });
-                          },
-                        ),
-                        Text('Remember Me',
-                            style: TextFontStyle.textStyle16w400c33333),
-                      ],
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text('Forget Password?',
-                          style: TextFontStyle.textStyle16w400c00BFA6),
-                    ),
-                  ],
+                  borderRadius: 16.r,
+                  name: 'Continue',
+                  textStyle: TextFontStyle.textStyle16w500cFFFFFF,
+                  onCallBack: () {
+                    NavigationService.navigateToReplacement(
+                        Routes.otpVerification);
+                  },
+                  context: context,
                 ),
-                UIHelper.verticalSpaceMedium,
-                Center(
-                  child: Text('Or Do not have an account?',
-                      style: TextFontStyle.textStyle16w400c767676),
-                ),
-                UIHelper.verticalSpaceMediumLarge,
-                customButton(
-                    borderRadius: 16.r,
-                    color: AppColors.c333333,
-                    borderColor: AppColors.c333333,
-                    name: 'Sign Up',
-                    textStyle: TextFontStyle.textStyle16w500cFFFFFF,
-                    onCallBack: () {
-                      NavigationService.navigateToReplacement(Routes.signup);
-                    },
-                    context: context),
               ],
             ),
           ),

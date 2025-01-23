@@ -79,7 +79,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: 16.r,
                     name: 'Sign In',
                     textStyle: TextFontStyle.textStyle16w500cFFFFFF,
-                    onCallBack: () {},
+                    onCallBack: () {
+                      NavigationService.navigateToUntilReplacement(
+                          Routes.homePage);
+                    },
                     context: context),
                 UIHelper.verticalSpaceMedium,
                 Row(
@@ -88,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                       children: [
                         Checkbox(
-                          checkColor: AppColors.c333333,
+                          activeColor: AppColors.c333333,
                           value: _is_checked,
                           onChanged: (val) {
                             setState(() {
