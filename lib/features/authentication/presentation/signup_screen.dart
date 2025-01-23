@@ -1,10 +1,16 @@
+import 'dart:math';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
+import 'package:mehdi0605/common_widgets/custom_textfeild.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
+import 'package:mehdi0605/helpers/navigation_service.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
+
+import '../../../helpers/all_routes.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -51,10 +57,13 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                         hintText: 'First Name',
-                        hintStyle:
-                            TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
+                        hintStyle: TextStyle(
+                            fontSize: 16.sp, color: AppColors.cC0C0C0C),
                       ),
                     ),
+                    // CustomTextfield(
+                    //   hintText: 'first name',
+                    // ),
                     UIHelper.verticalSpaceMedium,
                     TextFormField(
                       decoration: InputDecoration(
@@ -71,8 +80,8 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                         hintText: 'Last Name',
-                        hintStyle:
-                            TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
+                        hintStyle: TextStyle(
+                            fontSize: 16.sp, color: AppColors.cC0C0C0C),
                       ),
                     ),
                     UIHelper.verticalSpaceMedium,
@@ -111,8 +120,8 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                         hintText: 'Email',
-                        hintStyle:
-                            TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
+                        hintStyle: TextStyle(
+                            fontSize: 16.sp, color: AppColors.cC0C0C0C),
                       ),
                     ),
                     UIHelper.verticalSpaceMedium,
@@ -151,64 +160,69 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                         hintText: 'DD.MM.YY',
-                        hintStyle:
-                            TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
+                        hintStyle: TextStyle(
+                            fontSize: 16.sp, color: AppColors.cC0C0C0C),
                       ),
                     ),
                     UIHelper.verticalSpaceMedium,
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Checkbox(
-                          checkColor: AppColors.c333333,
-                          value: _is_checked,
-                          onChanged: (val) {
-                            setState(
-                              () {
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 6.h),
+                          child: Checkbox(
+                            activeColor: AppColors.c333333,
+                            value: _is_checked,
+                            onChanged: (val) {
+                              setState(() {
                                 _is_checked = val!;
-                              },
-                            );
-                          },
+                              });
+                            },
+                          ),
                         ),
                         Expanded(
                           child: Wrap(
                             children: [
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontFamily: 'HelveticaNeueRoman.otf',
+                              Column(
+                                children: [
+                                  RichText(
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                        fontFamily: 'HelveticaNeueRoman.otf',
+                                      ),
+                                      children: <TextSpan>[
+                                        TextSpan(
+                                          text: 'I agree to Heilprakt\'s',
+                                          style: TextStyle(
+                                              color: AppColors.c333333),
+                                        ),
+                                        TextSpan(
+                                          text: ' User Agreement ',
+                                          style: TextStyle(
+                                              color: AppColors.primaryColor),
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              print("User Agreement tapped");
+                                            },
+                                        ),
+                                        TextSpan(
+                                          text: 'and ',
+                                          style: TextStyle(
+                                              color: AppColors.c333333),
+                                        ),
+                                        TextSpan(
+                                          text: 'Privacy Policy.',
+                                          style: TextStyle(
+                                              color: AppColors.primaryColor),
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              print("Privacy Policy tapped");
+                                            },
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: 'I agree to Heilprakt\'s',
-                                      style:
-                                          TextStyle(color: AppColors.c333333),
-                                    ),
-                                    TextSpan(
-                                      text: ' User Agreement ',
-                                      style: TextStyle(
-                                          color: AppColors.primaryColor),
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () {
-                                          print("User Agreement tapped");
-                                        },
-                                    ),
-                                    TextSpan(
-                                      text: 'and ',
-                                      style:
-                                          TextStyle(color: AppColors.c333333),
-                                    ),
-                                    TextSpan(
-                                      text: 'Privacy Policy.',
-                                      style: TextStyle(
-                                          color: AppColors.primaryColor),
-                                      recognizer: TapGestureRecognizer()
-                                        ..onTap = () {
-                                          print("Privacy Policy tapped");
-                                        },
-                                    ),
-                                  ],
-                                ),
+                                ],
                               ),
                             ],
                           ),
@@ -220,7 +234,10 @@ class _SignupScreenState extends State<SignupScreen> {
                         borderRadius: 16.r,
                         name: 'Sign Up',
                         textStyle: TextFontStyle.textStyle16w500cFFFFFF,
-                        onCallBack: () {},
+                        onCallBack: () {
+                          NavigationService.navigateToUntilReplacement(
+                              Routes.homePage);
+                        },
                         context: context),
                     UIHelper.verticalSpaceMedium,
                     Center(
@@ -235,7 +252,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         name: 'Sign In',
                         textStyle: TextFontStyle.textStyle16w500cFFFFFF,
                         onCallBack: () {
-                          // Navigations
+                          NavigationService.navigateTo(Routes.login);
                         },
                         context: context),
                   ],

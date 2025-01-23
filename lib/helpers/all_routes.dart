@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:mehdi0605/features/authentication/presentation/forget_password_screen.dart';
 
 import '../features/authentication/presentation/login_screen.dart';
+import '../features/authentication/presentation/otp_verification_screen.dart';
 import '../features/authentication/presentation/signup_screen.dart';
+import '../features/home/home_page_screen.dart';
 
 final class Routes {
   static final Routes _routes = Routes._internal();
@@ -14,6 +16,8 @@ final class Routes {
   static const String login = '/login_screen';
   static const String signup = '/signup_screen';
   static const String forgetPassword = '/forget_password_screen';
+  static const String otpVerification = '/otp_verification_screen';
+  static const String homePage = '/home_page_screen';
 }
 
 final class RouteGenerator {
@@ -45,6 +49,22 @@ final class RouteGenerator {
         } else {
           return CupertinoPageRoute(
               builder: (context) => const ForgetPassword());
+        }
+      case Routes.otpVerification:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: const OtpVerificationScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) => const OtpVerificationScreen());
+        }
+      case Routes.homePage:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: const HomePageScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) => const HomePageScreen());
         }
 
       default:

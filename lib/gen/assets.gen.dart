@@ -118,12 +118,27 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Mcq.png
+  AssetGenImage get mcq => const AssetGenImage('assets/images/Mcq.png');
+
   /// File path: assets/images/On_boarding_logo.png
   AssetGenImage get onBoardingLogo =>
       const AssetGenImage('assets/images/On_boarding_logo.png');
 
+  /// File path: assets/images/Oral.png
+  AssetGenImage get oral => const AssetGenImage('assets/images/Oral.png');
+
+  /// File path: assets/images/State.png
+  AssetGenImage get state => const AssetGenImage('assets/images/State.png');
+
   /// File path: assets/images/applogo.png
   AssetGenImage get applogo => const AssetGenImage('assets/images/applogo.png');
+
+  /// File path: assets/images/brain.png
+  AssetGenImage get brain => const AssetGenImage('assets/images/brain.png');
+
+  /// File path: assets/images/chest.png
+  AssetGenImage get chest => const AssetGenImage('assets/images/chest.png');
 
   /// File path: assets/images/docuDrive.png
   AssetGenImage get docuDrive =>
@@ -132,6 +147,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/error_image.png
   AssetGenImage get errorImage =>
       const AssetGenImage('assets/images/error_image.png');
+
+  /// File path: assets/images/heart.png
+  AssetGenImage get heart => const AssetGenImage('assets/images/heart.png');
 
   /// File path: assets/images/onboading_logo.png
   AssetGenImage get onboadingLogo =>
@@ -156,6 +174,9 @@ class $AssetsImagesGen {
   AssetGenImage get sliderImage =>
       const AssetGenImage('assets/images/slider_image.png');
 
+  /// File path: assets/images/vegina.png
+  AssetGenImage get vegina => const AssetGenImage('assets/images/vegina.png');
+
   /// File path: assets/images/welcome_background.png
   AssetGenImage get welcomeBackground =>
       const AssetGenImage('assets/images/welcome_background.png');
@@ -170,16 +191,23 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        mcq,
         onBoardingLogo,
+        oral,
+        state,
         applogo,
+        brain,
+        chest,
         docuDrive,
         errorImage,
+        heart,
         onboadingLogo,
         passwordChangeSuccessfully,
         pdf,
         placeholderImage,
         profileAvatar,
         sliderImage,
+        vegina,
         welcomeBackground,
         welcomeImage,
         welcomeLogo
