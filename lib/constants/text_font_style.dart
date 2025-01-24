@@ -68,6 +68,28 @@ class TextFontStyle {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
+  static var textStyle20w500c333333 = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    fontSize: 20.sp,
+    color: AppColors.c333333,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+  );
+  static var textStyle14w400c333333helvatica = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    fontSize: 14.sp,
+    color: AppColors.c333333,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
+  static var textStyle14w400c767676helvatica = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    fontSize: 14.sp,
+    color: AppColors.c767676,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
+
 //old------------->>>>
 
   static var textStyle12w500c0CC0DF = GoogleFonts.poppins(
