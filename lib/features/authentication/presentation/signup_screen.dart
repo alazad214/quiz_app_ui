@@ -42,127 +42,28 @@ class _SignupScreenState extends State<SignupScreen> {
                         'Welcome to Heilprakt! Start mastering your exam preparation!',
                         style: TextFontStyle.textStyle16w400c767676),
                     UIHelper.verticalSpace(24.h),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        hintText: 'First Name',
-                        hintStyle: TextStyle(
-                            fontSize: 16.sp, color: AppColors.cC0C0C0C),
-                      ),
-                    ),
-                    // CustomTextfield(
-                    //   hintText: 'first name',
-                    // ),
-                    UIHelper.verticalSpaceMedium,
-                    TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        hintText: 'Last Name',
-                        hintStyle: TextStyle(
-                            fontSize: 16.sp, color: AppColors.cC0C0C0C),
-                      ),
+                    CustomTextfield(
+                      hintText: 'First Name',
                     ),
                     UIHelper.verticalSpaceMedium,
-                    TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        hintText: 'Username',
-                        hintStyle:
-                            TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
-                      ),
+                    CustomTextfield(
+                      hintText: 'Last Name',
                     ),
                     UIHelper.verticalSpaceMedium,
-                    TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        hintText: 'Email',
-                        hintStyle: TextStyle(
-                            fontSize: 16.sp, color: AppColors.cC0C0C0C),
-                      ),
+                    CustomTextfield(
+                      hintText: 'Username',
                     ),
                     UIHelper.verticalSpaceMedium,
-                    TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        hintText: 'Gender',
-                        hintStyle:
-                            TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
-                      ),
+                    CustomTextfield(
+                      hintText: 'Email',
                     ),
                     UIHelper.verticalSpaceMedium,
-                    TextFormField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                          borderSide: const BorderSide(
-                            color: AppColors.cC0C0C0,
-                          ),
-                        ),
-                        hintText: 'DD.MM.YY',
-                        hintStyle: TextStyle(
-                            fontSize: 16.sp, color: AppColors.cC0C0C0C),
-                      ),
+                    CustomTextfield(
+                      hintText: 'Gender',
+                    ),
+                    UIHelper.verticalSpaceMedium,
+                    CustomTextfield(
+                      hintText: 'DD.MM.YY',
                     ),
                     UIHelper.verticalSpaceMedium,
                     Row(

@@ -118,18 +118,20 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/Mcq.png
-  AssetGenImage get mcq => const AssetGenImage('assets/images/Mcq.png');
+  /// File path: assets/images/McqExam.png
+  AssetGenImage get mcqExam => const AssetGenImage('assets/images/McqExam.png');
 
   /// File path: assets/images/On_boarding_logo.png
   AssetGenImage get onBoardingLogo =>
       const AssetGenImage('assets/images/On_boarding_logo.png');
 
-  /// File path: assets/images/Oral.png
-  AssetGenImage get oral => const AssetGenImage('assets/images/Oral.png');
+  /// File path: assets/images/OralExam.png
+  AssetGenImage get oralExam =>
+      const AssetGenImage('assets/images/OralExam.png');
 
-  /// File path: assets/images/State.png
-  AssetGenImage get state => const AssetGenImage('assets/images/State.png');
+  /// File path: assets/images/StateExam.png
+  AssetGenImage get stateExam =>
+      const AssetGenImage('assets/images/StateExam.png');
 
   /// File path: assets/images/applogo.png
   AssetGenImage get applogo => const AssetGenImage('assets/images/applogo.png');
@@ -191,10 +193,10 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        mcq,
+        mcqExam,
         onBoardingLogo,
-        oral,
-        state,
+        oralExam,
+        stateExam,
         applogo,
         brain,
         chest,

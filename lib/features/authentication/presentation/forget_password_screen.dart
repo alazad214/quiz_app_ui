@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
+import 'package:mehdi0605/common_widgets/custom_textfeild.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
@@ -33,67 +34,44 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 Text('Create a strong passowrd',
                     style: TextFontStyle.textStyle24w700c333333),
                 UIHelper.verticalSpaceMedium,
-                TextFormField(
-                  obscureText: !_obscureText1,
-                  decoration: InputDecoration(
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _obscureText1 = !_obscureText1;
-                        });
-                      },
-                      child: Icon(
-                        _obscureText1 ? Icons.visibility : Icons.visibility_off,
-                        color: AppColors.cC0C0C0C,
-                      ),
+
+                //CUSTOM FIELDS
+
+                CustomTextfield(
+                  hintText: 'Enter Password',
+                  hintTextSyle:
+                      TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
+                  isObsecure: !_obscureText1,
+                  borderRadius: 16.r,
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _obscureText1 = !_obscureText1;
+                      });
+                    },
+                    child: Icon(
+                      _obscureText1 ? Icons.visibility : Icons.visibility_off,
+                      color: AppColors.cC0C0C0C,
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                      borderSide: const BorderSide(
-                        color: AppColors.cC0C0C0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                      borderSide: const BorderSide(
-                        color: AppColors.cC0C0C0,
-                      ),
-                    ),
-                    hintText: 'Enter Password',
-                    hintStyle:
-                        TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
                   ),
                 ),
                 UIHelper.verticalSpaceMedium,
-                TextFormField(
-                  obscureText: !_obscureText2,
-                  decoration: InputDecoration(
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _obscureText2 = !_obscureText2;
-                        });
-                      },
-                      child: Icon(
-                        _obscureText2 ? Icons.visibility : Icons.visibility_off,
-                        color: AppColors.cC0C0C0C,
-                      ),
+                CustomTextfield(
+                  hintText: 'Confirm Password',
+                  hintTextSyle:
+                      TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
+                  isObsecure: !_obscureText2,
+                  borderRadius: 16.r,
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _obscureText2 = !_obscureText2;
+                      });
+                    },
+                    child: Icon(
+                      _obscureText2 ? Icons.visibility : Icons.visibility_off,
+                      color: AppColors.cC0C0C0C,
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                      borderSide: const BorderSide(
-                        color: AppColors.cC0C0C0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                      borderSide: const BorderSide(
-                        color: AppColors.cC0C0C0,
-                      ),
-                    ),
-                    hintText: 'Repeat Password',
-                    hintStyle:
-                        TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
                   ),
                 ),
                 UIHelper.verticalSpaceMedium,

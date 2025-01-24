@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:mehdi0605/common_widgets/custom_button.dart';
+import 'package:mehdi0605/common_widgets/custom_textfeild.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
@@ -35,44 +36,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text('Welcome Back to Heilprakt!',
                     style: TextFontStyle.textStyle16w400c767676),
                 UIHelper.verticalSpace(24.h),
-                TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                      borderSide: const BorderSide(
-                        color: AppColors.cC0C0C0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                      borderSide: const BorderSide(
-                        color: AppColors.cC0C0C0,
-                      ),
-                    ),
-                    hintText: 'Enter email',
-                    hintStyle:
-                        TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
-                  ),
+                CustomTextfield(
+                  hintText: 'Enter email',
+                  borderRadius: 16.r,
                 ),
                 UIHelper.verticalSpaceMedium,
-                TextFormField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                      borderSide: const BorderSide(
-                        color: AppColors.cC0C0C0,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                      borderSide: const BorderSide(
-                        color: AppColors.cC0C0C0,
-                      ),
-                    ),
-                    hintText: 'Enter password',
-                    hintStyle:
-                        TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
-                  ),
+                CustomTextfield(
+                  hintText: 'Enter password',
+                  borderRadius: 16.r,
                 ),
                 UIHelper.verticalSpaceMedium,
                 customButton(
