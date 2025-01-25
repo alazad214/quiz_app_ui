@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
 
 import '../../../constants/app_colors.dart';
-import '../../../gen/assets.gen.dart';
+
 
 class ExamTile extends StatelessWidget {
   const ExamTile({
@@ -48,7 +48,7 @@ class ExamTile extends StatelessWidget {
               ),
               Positioned(
                 bottom:
-                    4, // Adjust this value to position the text appropriately
+                4, // Adjust this value to position the text appropriately
                 left: 0,
                 right: 0,
                 child: Center(

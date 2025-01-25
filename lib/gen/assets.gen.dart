@@ -70,6 +70,9 @@ class $AssetsIconsGen {
   AssetGenImage get closeCircle =>
       const AssetGenImage('assets/icons/close-circle.png');
 
+  /// File path: assets/icons/comment.png
+  AssetGenImage get comment => const AssetGenImage('assets/icons/comment.png');
+
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
       const AssetGenImage('assets/icons/message-minus.png');
@@ -86,6 +89,12 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/search.png
   AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
+
+  /// File path: assets/icons/share.png
+  AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
+
+  /// File path: assets/icons/star.png
+  AssetGenImage get star => const AssetGenImage('assets/icons/star.png');
 
   /// File path: assets/icons/success.png
   AssetGenImage get success => const AssetGenImage('assets/icons/success.png');
@@ -105,11 +114,14 @@ class $AssetsIconsGen {
         arrowleft,
         backIcon,
         closeCircle,
+        comment,
         messageMinus,
         notification,
         profile,
         searchNormal,
         search,
+        share,
+        star,
         success,
         trippleArrow
       ];
@@ -164,6 +176,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/pdf.png
   AssetGenImage get pdf => const AssetGenImage('assets/images/pdf.png');
 
+  /// File path: assets/images/person.png
+  AssetGenImage get person => const AssetGenImage('assets/images/person.png');
+
   /// File path: assets/images/placeholder_image.jpeg
   AssetGenImage get placeholderImage =>
       const AssetGenImage('assets/images/placeholder_image.jpeg');
@@ -206,6 +221,7 @@ class $AssetsImagesGen {
         onboadingLogo,
         passwordChangeSuccessfully,
         pdf,
+        person,
         placeholderImage,
         profileAvatar,
         sliderImage,

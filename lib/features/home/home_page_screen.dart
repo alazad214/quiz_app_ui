@@ -4,10 +4,9 @@ import 'package:mehdi0605/common_widgets/custom_appbar.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/features/home/widgets/choice_topic_items.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
+import 'package:mehdi0605/common_widgets/carousel_container.dart';
 import '../../constants/text_font_style.dart';
-import 'widgets/exam_preparation_gridview.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../../common_widgets/exam_preparation_gridview.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -17,7 +16,8 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class _HomePageScreenState extends State<HomePageScreen> {
-  final List<Map<String, dynamic>> topicimages = [
+  TextEditingController _searchController = TextEditingController();
+  final List<Map<String, dynamic>> topicitem = [
     {'category': 'Anatomy', 'image': 'assets/images/chest.png'},
     {'category': 'Neurology', 'image': 'assets/images/brain.png'},
     {'category': 'Gynecology', 'image': 'assets/images/vegina.png'},
@@ -34,21 +34,40 @@ class _HomePageScreenState extends State<HomePageScreen> {
     {'category': 'State Exam', 'image': 'assets/images/StateExam.png'},
   ];
 
-  final List<String> imageSliders = [
-    'assets/images/McqExam.png',
-    'assets/images/McqExam.png',
-    'assets/images/McqExam.png',
+  final List<Map<String, dynamic>> carouselData = [
+    {
+      'text':
+          'I wanted to share some tips and strategies for anyone preparing for the upcoming Anatomy State Exam.',
+      'image': 'assets/images/person.png',
+      'title': 'Arina',
+      'time': '24h',
+    },
+    {
+      'text':
+          'I wanted to share some tips and strategies for anyone preparing for the upcoming Anatomy State Exam.',
+      'image': 'assets/images/person.png',
+      'title': 'John',
+      'time': '12h',
+    },
+    {
+      'text':
+          'I wanted to share some tips and strategies for anyone preparing for the upcoming Anatomy State Exam.',
+      'image': 'assets/images/person.png',
+      'title': 'Sarah',
+      'time': '48h',
+    },
   ];
 
-  // Use PageController for the carousel slider
-  final PageController _pageController = PageController();
+  int currentIndex = 0;
 
-  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackground,
+
+      //Custom AppBar design=======================>
+
       appBar: CustomAppbar(
         title: 'Good Morning!',
         subtitle: 'Rosa Lawson',
@@ -67,6 +86,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: TextField(
+                controller: _searchController,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
                   hintText: 'Search for courses or seminars',
@@ -82,9 +102,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 ),
               ),
             ),
-            UIHelper.verticalSpaceSmall,
-
-            // Choose Topic
+            UIHelper.verticalSpaceSmall,//16.h
             Padding(
               padding: const EdgeInsets.only(left: 16),
               child: Text(
@@ -92,28 +110,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 style: TextFontStyle.textStyle20w500c333333,
               ),
             ),
-            UIHelper.verticalSpaceSmall,
-
-            // Choose Topic Grid
+            UIHelper.verticalSpaceSmall,//16.h
             Container(
               height: 200.h,
-              child: GridView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                itemCount: topicimages.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  childAspectRatio: 1,
-                ),
-                itemBuilder: (context, index) {
-                  return TopicsTile(
-                    topics: topicimages[index]['category'],
-                    topicimages: topicimages[index]['image'],
-                  );
-                },
-              ),
+              child: topicsGridView(),
             ),
-
-            // Exam preparation
+            UIHelper.verticalSpaceMedium,
             Padding(
               padding: const EdgeInsets.only(left: 16),
               child: Text(
@@ -122,25 +124,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
             ),
             UIHelper.verticalSpaceSmall,
-
-            // Exam preparation Grid
-            Container(
-              height: 110.h,
-              child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  childAspectRatio: 1,
-                  crossAxisSpacing: 16.w,
-                ),
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                itemCount: examimages.length,
-                itemBuilder: (context, index) => ExamTile(
-                  topics: examimages[index]['category'],
-                  examimages: examimages[index]['image'],
-                ),
-              ),
-            ),
-            UIHelper.verticalSpaceSmall,
+            examGridView(examimages: examimages),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -162,71 +146,27 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ],
             ),
             UIHelper.verticalSpaceSmall,
-
-            // Image Carousel with SmoothPageIndicator
-            Container(
-              child: Column(
-                children: [
-                  // CarouselSlider
-                  CarouselSlider.builder(
-                    itemCount: imageSliders.length,
-                    options: CarouselOptions(
-                      height: 200.0,
-                      scrollDirection: Axis.horizontal,
-                      autoPlay: true,
-                      autoPlayInterval: Duration(seconds: 3),
-                      autoPlayAnimationDuration: Duration(milliseconds: 800),
-                      autoPlayCurve: Curves.easeInOut,
-                      viewportFraction: 0.8,
-                      onPageChanged: (index, reason) {
-                        setState(() {
-                          _currentIndex = index;
-                        });
-                      },
-                    ),
-                    itemBuilder: (context, index, realIndex) {
-                      return Builder(
-                        builder: (BuildContext context) {
-                          return Container(
-                            margin: EdgeInsets.symmetric(horizontal: 5.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                imageSliders[index],
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
-                  // Dotted Page Indicator using PageController
-                  SmoothPageIndicator(
-                    controller:
-                        _pageController, // Attach the PageController here
-                    count: imageSliders.length,
-                    effect: WormEffect(
-                      dotHeight: 8.0,
-                      dotWidth: 8.0,
-                      spacing: 16.0,
-                      dotColor: Colors.grey,
-                      activeDotColor: AppColors.primaryColor,
-                    ),
-                    onDotClicked: (index) {
-                      _pageController.animateToPage(
-                        index,
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ),
+            CarouselContainer(carouseltitle: carouselData[0]['title'], carouseltext: carouselData[0]['image'], carouseltime: carouselData[0]['text'], carouselimage: carouselData[0]['time'], carousellength: carouselData.length)
           ],
         ),
       ),
+    );
+  }
+
+  GridView topicsGridView() {
+    return GridView.builder(
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      itemCount: topicitem.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 4,
+        childAspectRatio: 1,
+      ),
+      itemBuilder: (context, index) {
+        return TopicsTile(
+          topics: topicitem[index]['category'],
+          topicimages: topicitem[index]['image'],
+        );
+      },
     );
   }
 }
