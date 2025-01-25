@@ -9,7 +9,7 @@ final class UIHelper {
   UIHelper._();
 
   // Vertical spacing constants. Adjust to your liking.
-  static final double _verticalSpaceSmall = 10.0.w;
+  static final double _verticalSpaceSmall = 16.0.w;
   static final double _verticalSpaceMedium = 20.0.w;
   // ignore: unused_field
   static final double _verticalSpaceMediumLarge = 24.0.w;
