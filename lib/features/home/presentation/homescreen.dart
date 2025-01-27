@@ -62,16 +62,15 @@ class _HomescreenState extends State<Homescreen> {
 
   int _currentIndex = 0;
 
-  // Declare the PageController for the SmoothPageIndicator and the Carousel
   final PageController _pageController = PageController();
 
   @override
   void initState() {
     super.initState();
-    // Listen for page changes in the PageController
+
     _pageController.addListener(() {
       setState(() {
-        _currentIndex = _pageController.page!.round(); // Update _currentIndex
+        _currentIndex = _pageController.page!.round();
       });
     });
   }
@@ -154,7 +153,7 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                 ),
               ),
-              UIHelper.verticalSpaceSmall, //16.h
+              UIHelper.verticalSpaceSmall,
               Padding(
                 padding: const EdgeInsets.only(left: 16),
                 child: Text(
@@ -162,7 +161,7 @@ class _HomescreenState extends State<Homescreen> {
                   style: TextFontStyle.textStyle20w500c333333,
                 ),
               ),
-              UIHelper.verticalSpace(16.h), //16.h
+              UIHelper.verticalSpace(16.h),
               Container(
                 height: 200.h,
                 child: topicsGridView(),
@@ -177,35 +176,13 @@ class _HomescreenState extends State<Homescreen> {
               ),
               UIHelper.verticalSpace(16.h),
               ExamGridView(examcategoryimages: examimages),
-              UIHelper.verticalSpace(54.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: Text(
-                      'Latest from Community',
-                      style: TextFontStyle.textStyle20w500c333333,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Text(
-                      'View All',
-                      style: TextFontStyle.textStyle16w400c00BFA6,
-                    ),
-                  ),
-                ],
-              ),
-
               UIHelper.verticalSpace(16.h),
               Container(
                 child: Column(
                   children: [
                     CarouselSlider(
                       options: CarouselOptions(
-                        aspectRatio:
-                            2.1, // Adjust aspect ratio to match smaller height
+                        aspectRatio: 2.1,
                         scrollDirection: Axis.horizontal,
                         autoPlay: true,
                         enlargeCenterPage: true,
@@ -214,7 +191,7 @@ class _HomescreenState extends State<Homescreen> {
                           setState(() {
                             _currentIndex = index;
                           });
-                          // Sync the PageController with Carousel
+
                           _pageController.jumpToPage(index);
                         },
                       ),
