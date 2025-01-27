@@ -9,7 +9,7 @@ import 'package:mehdi0605/features/oral_exam/presentation/oral_result_screen.dar
 import '../features/authentication/presentation/login_screen.dart';
 import '../features/authentication/presentation/otp_verification_screen.dart';
 import '../features/authentication/presentation/signup_screen.dart';
-import '../features/home/home_page_screen.dart';
+import '../features/home/presentation/homescreen.dart';
 
 final class Routes {
   static final Routes _routes = Routes._internal();
@@ -70,10 +70,10 @@ final class RouteGenerator {
       case Routes.homePage:
         if (Platform.isAndroid) {
           return _FadedTransitionRoute(
-              widget: const HomePageScreen(), settings: settings);
+              widget: const Homescreen(), settings: settings);
         } else {
           return CupertinoPageRoute(
-              builder: (context) => const HomePageScreen());
+              builder: (context) => const Homescreen());
         }
         //
       case Routes.oralExamQuestionScreen:

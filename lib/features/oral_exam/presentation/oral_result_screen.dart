@@ -75,10 +75,8 @@ class _OralResultScreenState extends State<OralResultScreen> {
               alignment: Alignment.centerLeft,
               child: GestureDetector(
                 onTap: () {},
-                child: Text(
-                  "Retake?",
-                  style: TextFontStyle.textStyle14w500c00BFA6
-                ),
+                child: Text("Retake?",
+                    style: TextFontStyle.textStyle14w500c00BFA6),
               ),
             ),
             Spacer(),
@@ -93,5 +91,3 @@ class _OralResultScreenState extends State<OralResultScreen> {
     );
   }
 }
-
-

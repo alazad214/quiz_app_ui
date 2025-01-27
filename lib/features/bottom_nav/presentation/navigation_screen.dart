@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
-import 'package:mehdi0605/features/home/home_page_screen.dart';
+import 'package:mehdi0605/features/home/presentation/homescreen.dart';
 
 class NavigationScreen extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int selectedIndex = 0;
 
   final List<Widget> pages = [
-    HomePageScreen(),
+    Homescreen(),
     MessagePage(),
     ForumPage(),
     ProfilePage(),
