@@ -121,21 +121,21 @@ class CustomTextfield extends StatelessWidget {
           ),
         ),
         disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
           borderSide: BorderSide(
             color: borderColor ?? AppColors.cC0C0C0,
             width: 1,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
           borderSide: const BorderSide(
             color: Colors.red,
             width: 1,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
           borderSide: BorderSide(
             color: borderColor ?? AppColors.cC0C0C0,
             width: 1,

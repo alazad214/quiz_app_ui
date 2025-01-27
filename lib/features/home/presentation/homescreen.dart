@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:mehdi0605/common_widgets/custom_appbar.dart';
 import 'package:mehdi0605/common_widgets/exam_preparation_gridview.dart';
 import 'package:mehdi0605/common_widgets/seminar_container.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
@@ -9,17 +7,17 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:mehdi0605/features/home/widgets/choice_topic_items.dart';
 import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import smooth_page_indicator
-import '../../constants/text_font_style.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../../../constants/text_font_style.dart';
 
-class HomePageScreen extends StatefulWidget {
-  const HomePageScreen({super.key});
+class Homescreen extends StatefulWidget {
+  const Homescreen({super.key});
 
   @override
-  State<HomePageScreen> createState() => _HomePageScreenState();
+  State<Homescreen> createState() => _HomescreenState();
 }
 
-class _HomePageScreenState extends State<HomePageScreen> {
+class _HomescreenState extends State<Homescreen> {
   TextEditingController _searchController = TextEditingController();
   final List<Map<String, dynamic>> topicitem = [
     {'category': 'Anatomy', 'image': 'assets/images/chest.png'},
@@ -199,25 +197,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: Text(
-                      'Latest from Community',
-                      style: TextFontStyle.textStyle20w500c333333,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Text(
-                      'View All',
-                      style: TextFontStyle.textStyle16w400c00BFA6,
-                    ),
-                  ),
-                ],
-              ),
+
               UIHelper.verticalSpace(16.h),
               Container(
                 child: Column(
