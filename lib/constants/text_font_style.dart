@@ -137,4 +137,46 @@ class TextFontStyle {
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
   );
+//
+  static var textStyle16w500c333333 = GoogleFonts.poppins(
+    color: AppColors.c333333,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
+
+  static var textStyle16w700c333333 = GoogleFonts.poppins(
+    color: AppColors.c333333,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+  );
+
+  static var textStyle16w700primaryColor = GoogleFonts.poppins(
+    color: AppColors.primaryColor,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+  );
+
+  static var textStyle16w500cFF6B6B = GoogleFonts.poppins(
+    color: AppColors.cFF6B6B,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+  static var textStyle16w500primaryColor = GoogleFonts.poppins(
+    color: AppColors.primaryColor,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+
+  static var textStyle16w400c333333 = GoogleFonts.poppins(
+    color: AppColors.c333333,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+  static var textStyle14w500c00BFA6 = GoogleFonts.poppins(
+    color: AppColors.primaryColor,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+
 }

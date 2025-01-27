@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:mehdi0605/features/authentication/presentation/forget_password_screen.dart';
+import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_question_screen.dart';
+import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_suggested_answer.dart';
+import 'package:mehdi0605/features/oral_exam/presentation/oral_result_screen.dart';
 
 import '../features/authentication/presentation/login_screen.dart';
 import '../features/authentication/presentation/otp_verification_screen.dart';
@@ -18,6 +21,12 @@ final class Routes {
   static const String forgetPassword = '/forget_password_screen';
   static const String otpVerification = '/otp_verification_screen';
   static const String homePage = '/home_page_screen';
+
+  //
+  static const String oralExamQuestionScreen = '/oral_exam_question_screen';
+  static const String oralExamSuggestedAnswerScreen = '/oral_exam_suggested_answer_screen';
+  static const String oralResultScreen = '/oral_result_screen';
+
 }
 
 final class RouteGenerator {
@@ -65,6 +74,32 @@ final class RouteGenerator {
         } else {
           return CupertinoPageRoute(
               builder: (context) => const HomePageScreen());
+        }
+        //
+      case Routes.oralExamQuestionScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: const OralExamQuestionScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) => const OralExamQuestionScreen());
+        }
+      case Routes.oralExamSuggestedAnswerScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: const OralExamSuggestedAnswer(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) => const OralExamSuggestedAnswer());
+        }
+
+      case Routes.oralResultScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: const OralResultScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) => const OralResultScreen());
         }
 
       default:

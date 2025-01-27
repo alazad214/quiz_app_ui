@@ -4,9 +4,8 @@ import 'package:mehdi0605/common_widgets/custom_appbar.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/features/home/widgets/choice_topic_items.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
-import 'package:mehdi0605/common_widgets/carousel_container.dart';
 import '../../constants/text_font_style.dart';
-import '../../common_widgets/exam_preparation_gridview.dart';
+
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -124,7 +123,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
             ),
             UIHelper.verticalSpaceSmall,
-            examGridView(examimages: examimages),
+            // examGridView(examimages: examimages),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -146,7 +145,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ],
             ),
             UIHelper.verticalSpaceSmall,
-            CarouselContainer(carouseltitle: carouselData[0]['title'], carouseltext: carouselData[0]['image'], carouseltime: carouselData[0]['text'], carouselimage: carouselData[0]['time'], carousellength: carouselData.length)
+            // CarouselContainer(carouseltitle: carouselData[0]['title'], carouseltext: carouselData[0]['image'], carouseltime: carouselData[0]['text'], carouselimage: carouselData[0]['time'], carousellength: carouselData.length)
           ],
         ),
       ),
@@ -170,3 +169,5 @@ class _HomePageScreenState extends State<HomePageScreen> {
     );
   }
 }
+
+///fadsjfaksdjf
