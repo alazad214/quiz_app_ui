@@ -53,6 +53,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Home.png
   AssetGenImage get home => const AssetGenImage('assets/icons/Home.png');
 
+  /// File path: assets/icons/alarmclock.png
+  AssetGenImage get alarmclock =>
+      const AssetGenImage('assets/icons/alarmclock.png');
+
   /// File path: assets/icons/arrow-down.svg
   String get arrowDown => 'assets/icons/arrow-down.svg';
 
@@ -120,6 +124,7 @@ class $AssetsIconsGen {
         googleSvg,
         help,
         home,
+        alarmclock,
         arrowDown,
         arrowLeft,
         arrowRightPng,
