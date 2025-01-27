@@ -199,6 +199,25 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   ),
                 ],
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: Text(
+                      'Latest from Community',
+                      style: TextFontStyle.textStyle20w500c333333,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Text(
+                      'View All',
+                      style: TextFontStyle.textStyle16w400c00BFA6,
+                    ),
+                  ),
+                ],
+              ),
               UIHelper.verticalSpace(16.h),
               Container(
                 child: Column(
