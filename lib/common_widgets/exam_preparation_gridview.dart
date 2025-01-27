@@ -1,21 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../code_kepper.dart';
 import '../features/home/widgets/exam_tile.dart';
 
-class examGridView extends StatelessWidget {
-  const examGridView({
+class ExamGridView extends StatelessWidget {
+  const ExamGridView({
     super.key,
-    required this.examimages,
+    required this.examcategoryimages,
   });
 
-  final List<Map<String, dynamic>> examimages;
+  final List<Map<String, dynamic>> examcategoryimages;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120.h,
+      // Ensure a fixed height
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -23,10 +21,10 @@ class examGridView extends StatelessWidget {
           crossAxisSpacing: 16.w,
         ),
         padding: EdgeInsets.symmetric(horizontal: 16.w),
-        itemCount: examimages.length,
+        itemCount: examcategoryimages.length,
         itemBuilder: (context, index) => ExamTile(
-          topics: examimages[index]['category'],
-          examimages: examimages[index]['image'],
+          topics: examcategoryimages[index]['category'],
+          examimages: examcategoryimages[index]['image'],
         ),
       ),
     );
