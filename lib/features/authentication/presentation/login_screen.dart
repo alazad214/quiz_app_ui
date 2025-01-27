@@ -38,16 +38,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 UIHelper.verticalSpace(24.h),
                 CustomTextfield(
                   hintText: 'Enter email',
-                  borderRadius: 16.r,
                 ),
                 UIHelper.verticalSpaceMedium,
                 CustomTextfield(
                   hintText: 'Enter password',
-                  borderRadius: 16.r,
                 ),
                 UIHelper.verticalSpaceMedium,
                 customButton(
-                    borderRadius: 16.r,
                     name: 'Sign In',
                     textStyle: TextFontStyle.textStyle16w500cFFFFFF,
                     onCallBack: () {

@@ -68,6 +68,11 @@ class TextFontStyle {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
+  static var textStyle16w500c333333 = GoogleFonts.poppins(
+    color: AppColors.c333333,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
   static var textStyle20w500c333333 = TextStyle(
     fontFamily: 'HelveticaNeueRoman.otf',
     fontSize: 20.sp,
@@ -125,6 +130,12 @@ class TextFontStyle {
     color: AppColors.cFFFFFF,
     fontSize: 16.sp,
     fontWeight: FontWeight.w600,
+  );
+
+  static var textStyle16w700cFFFFFF = GoogleFonts.poppins(
+    color: AppColors.c000000,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
   );
 
   static var textStyle18w500c333333 = GoogleFonts.poppins(

@@ -56,8 +56,16 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrow-down.svg
   String get arrowDown => 'assets/icons/arrow-down.svg';
 
+  /// File path: assets/icons/arrow-left.png
+  AssetGenImage get arrowLeft =>
+      const AssetGenImage('assets/icons/arrow-left.png');
+
+  /// File path: assets/icons/arrow-right.png
+  AssetGenImage get arrowRightPng =>
+      const AssetGenImage('assets/icons/arrow-right.png');
+
   /// File path: assets/icons/arrow_right.svg
-  String get arrowRight => 'assets/icons/arrow_right.svg';
+  String get arrowRightSvg => 'assets/icons/arrow_right.svg';
 
   /// File path: assets/icons/arrowleft.svg
   String get arrowleft => 'assets/icons/arrowleft.svg';
@@ -72,6 +80,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/comment.png
   AssetGenImage get comment => const AssetGenImage('assets/icons/comment.png');
+
+  /// File path: assets/icons/dot.png
+  AssetGenImage get dot => const AssetGenImage('assets/icons/dot.png');
 
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
@@ -110,11 +121,14 @@ class $AssetsIconsGen {
         help,
         home,
         arrowDown,
-        arrowRight,
+        arrowLeft,
+        arrowRightPng,
+        arrowRightSvg,
         arrowleft,
         backIcon,
         closeCircle,
         comment,
+        dot,
         messageMinus,
         notification,
         profile,
@@ -131,7 +145,12 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   /// File path: assets/images/McqExam.png
-  AssetGenImage get mcqExam => const AssetGenImage('assets/images/McqExam.png');
+  AssetGenImage get mcqExamPng =>
+      const AssetGenImage('assets/images/McqExam.png');
+
+  /// File path: assets/images/mcq_exam.png
+  AssetGenImage get mcqExamPng_ =>
+      const AssetGenImage('assets/images/mcq_exam.png');
 
   /// File path: assets/images/On_boarding_logo.png
   AssetGenImage get onBoardingLogo =>
@@ -144,6 +163,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/StateExam.png
   AssetGenImage get stateExam =>
       const AssetGenImage('assets/images/StateExam.png');
+
+  /// File path: assets/images/anatomy.jpg
+  AssetGenImage get anatomy => const AssetGenImage('assets/images/anatomy.jpg');
 
   /// File path: assets/images/applogo.png
   AssetGenImage get applogo => const AssetGenImage('assets/images/applogo.png');
@@ -164,6 +186,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/heart.png
   AssetGenImage get heart => const AssetGenImage('assets/images/heart.png');
+
+  /// File path: assets/images/instruction_image.png
+  AssetGenImage get instructionImage =>
+      const AssetGenImage('assets/images/instruction_image.png');
 
   /// File path: assets/images/onboading_logo.png
   AssetGenImage get onboadingLogo =>
@@ -208,16 +234,19 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        mcqExam,
+        mcqExamPng,
+        mcqExamPng_,
         onBoardingLogo,
         oralExam,
         stateExam,
+        anatomy,
         applogo,
         brain,
         chest,
         docuDrive,
         errorImage,
         heart,
+        instructionImage,
         onboadingLogo,
         passwordChangeSuccessfully,
         pdf,
