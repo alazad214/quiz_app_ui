@@ -10,6 +10,7 @@ import 'helpers/navigation_service.dart';
 import 'loading_screen.dart';
 import 'networks/dio/dio.dart';
 import 'networks/internet_checker/internet_checker_controller.dart';
+import 'package:flutter/src/rendering/box.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

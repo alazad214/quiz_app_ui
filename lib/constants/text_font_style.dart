@@ -89,6 +89,20 @@ class TextFontStyle {
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
   );
+  static var textStyle16400c333333helvatica = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    fontSize: 14.sp,
+    color: AppColors.c333333,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
+  static var textStyle14w700c00BFA6helvatica = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    fontSize: 16.sp,
+    color: AppColors.cButtonColor,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+  );
 
 //old------------->>>>
 
@@ -137,4 +151,6 @@ class TextFontStyle {
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
   );
+
+  static var textStyle14w400cA5A5A5;
 }

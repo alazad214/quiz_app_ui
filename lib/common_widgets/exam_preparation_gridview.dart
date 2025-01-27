@@ -7,13 +7,11 @@ class ExamGridView extends StatelessWidget {
     super.key,
     required this.examcategoryimages,
   });
-
   final List<Map<String, dynamic>> examcategoryimages;
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      // Ensure a fixed height
+      height: 130.h,
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,

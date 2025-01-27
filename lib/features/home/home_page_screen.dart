@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:mehdi0605/common_widgets/custom_appbar.dart';
+import 'package:mehdi0605/common_widgets/exam_preparation_gridview.dart';
+import 'package:mehdi0605/common_widgets/seminar_container.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:mehdi0605/features/home/widgets/choice_topic_items.dart';
+import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
-import 'package:mehdi0605/common_widgets/carousel_container.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import smooth_page_indicator
 import '../../constants/text_font_style.dart';
-import '../../common_widgets/exam_preparation_gridview.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -58,96 +62,286 @@ class _HomePageScreenState extends State<HomePageScreen> {
     },
   ];
 
-  int currentIndex = 0;
+  int _currentIndex = 0;
 
+  // Declare the PageController for the SmoothPageIndicator and the Carousel
+  final PageController _pageController = PageController();
+
+  @override
+  void initState() {
+    super.initState();
+    // Listen for page changes in the PageController
+    _pageController.addListener(() {
+      setState(() {
+        _currentIndex = _pageController.page!.round(); // Update _currentIndex
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackground,
-
-      //Custom AppBar design=======================>
-
-      appBar: CustomAppbar(
-        title: 'Good Morning!',
-        subtitle: 'Rosa Lawson',
-        leadingVisible: true,
-        isLeading: true,
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.batch_prediction)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
-        ],
-      ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            UIHelper.verticalSpaceSmall,
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: TextField(
-                controller: _searchController,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                  hintText: 'Search for courses or seminars',
-                  hintStyle: TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
-                  filled: true,
-                  fillColor: AppColors.cFFFFFF,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 15.h, horizontal: 20.w),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              UIHelper.verticalSpaceMedium,
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Good Morning!',
+                              style:
+                                  TextFontStyle.textStyle16400c333333helvatica,
+                            ),
+                            Text(
+                              'Rosa Lawson',
+                              style: TextFontStyle.textStyle20w500c333333,
+                            ),
+                          ],
+                        ),
+                        UIHelper.horizontalSpace(169.w),
+                        GestureDetector(
+                          onTap: () {},
+                          child: SizedBox(
+                            height: 24.h,
+                            width: 24.w,
+                            child: Image.asset(
+                              Assets.icons.medalStar.path,
+                            ),
+                          ),
+                        ),
+                        UIHelper.horizontalSpaceSmall,
+                        GestureDetector(
+                          onTap: () {},
+                          child: SizedBox(
+                            height: 24.h,
+                            width: 24.w,
+                            child: Image.asset(
+                              Assets.icons.notification.path,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ),
-            UIHelper.verticalSpaceSmall,//16.h
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Text(
-                'Choose Topic',
-                style: TextFontStyle.textStyle20w500c333333,
-              ),
-            ),
-            UIHelper.verticalSpaceSmall,//16.h
-            Container(
-              height: 200.h,
-              child: topicsGridView(),
-            ),
-            UIHelper.verticalSpaceMedium,
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Text(
-                'Exam Preparation',
-                style: TextFontStyle.textStyle20w500c333333,
-              ),
-            ),
-            UIHelper.verticalSpaceSmall,
-            examGridView(examimages: examimages),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 16),
-                  child: Text(
-                    'Latest from Community',
-                    style: TextFontStyle.textStyle20w500c333333,
+              UIHelper.verticalSpaceSmall,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: TextField(
+                  controller: _searchController,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    hintText: 'Search for courses or seminars',
+                    hintStyle:
+                        TextStyle(fontSize: 16, color: AppColors.cC0C0C0C),
+                    filled: true,
+                    fillColor: AppColors.cFFFFFF,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                      borderSide: BorderSide.none,
+                    ),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15.h, horizontal: 20.w),
                   ),
                 ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(right: 20),
-                  child: Text(
-                    'View All',
-                    style: TextFontStyle.textStyle16w400c00BFA6,
-                  ),
+              ),
+              UIHelper.verticalSpaceSmall, //16.h
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Text(
+                  'Choose Topic',
+                  style: TextFontStyle.textStyle20w500c333333,
                 ),
-              ],
-            ),
-            UIHelper.verticalSpaceSmall,
-            CarouselContainer(carouseltitle: carouselData[0]['title'], carouseltext: carouselData[0]['image'], carouseltime: carouselData[0]['text'], carouselimage: carouselData[0]['time'], carousellength: carouselData.length)
-          ],
+              ),
+              UIHelper.verticalSpace(16.h), //16.h
+              Container(
+                height: 200.h,
+                child: topicsGridView(),
+              ),
+              UIHelper.verticalSpace(54.h),
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Text(
+                  'Exam Preparation',
+                  style: TextFontStyle.textStyle20w500c333333,
+                ),
+              ),
+              UIHelper.verticalSpace(16.h),
+              ExamGridView(examcategoryimages: examimages),
+              UIHelper.verticalSpace(54.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: Text(
+                      'Latest from Community',
+                      style: TextFontStyle.textStyle20w500c333333,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Text(
+                      'View All',
+                      style: TextFontStyle.textStyle16w400c00BFA6,
+                    ),
+                  ),
+                ],
+              ),
+              UIHelper.verticalSpace(16.h),
+              Container(
+                child: Column(
+                  children: [
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        aspectRatio:
+                            2.1, // Adjust aspect ratio to match smaller height
+                        scrollDirection: Axis.horizontal,
+                        autoPlay: true,
+                        enlargeCenterPage: true,
+                        viewportFraction: 0.8,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            _currentIndex = index;
+                          });
+                          // Sync the PageController with Carousel
+                          _pageController.jumpToPage(index);
+                        },
+                      ),
+                      items: carouselData.map((carouselItem) {
+                        return Builder(
+                          builder: (BuildContext context) {
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 8.0),
+                              child: Container(
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 8.0), // Add margin for spacing
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.h),
+                                  color: AppColors.cFFFFFF,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    UIHelper.verticalSpace(12),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 14.0),
+                                          child: Row(
+                                            children: [
+                                              Image.asset(
+                                                carouselItem['image'],
+                                                height: 26.h,
+                                                width:
+                                                    26.w, // Adjust image height
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Text(
+                                                  carouselItem['title'],
+                                                  style: TextFontStyle
+                                                      .textStyle14w400c767676helvatica
+                                                      .copyWith(
+                                                    color: AppColors.c333333,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 16),
+                                          child: Text(
+                                            '${carouselItem['time']}',
+                                            style: TextFontStyle
+                                                .textStyle14w400c767676helvatica
+                                                .copyWith(
+                                              color: AppColors.cC0C0C0,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    UIHelper.verticalSpace(10.h),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 16.0),
+                                      child: Text(
+                                        carouselItem['text'],
+                                        style: TextFontStyle
+                                            .textStyle14w400c767676helvatica,
+                                        textAlign: TextAlign.justify,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      }).toList(),
+                    ),
+                    UIHelper.verticalSpace(14.h),
+                    Center(
+                      child: SmoothPageIndicator(
+                        controller: _pageController, // Use PageController
+                        count: carouselData.length,
+                        effect: WormEffect(
+                          dotWidth: 8.0.w, // Adjust the dot size
+                          dotHeight: 8.0.h, // Adjust the dot size
+                          activeDotColor: AppColors.primaryColor,
+                          dotColor: AppColors.cC0C0C0C,
+                          spacing: 8.0.w, // Adjust spacing between dots
+                        ),
+                      ),
+                    ),
+                    UIHelper.verticalSpace(16.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: Text(
+                            'Upcoming Seminar',
+                            style: TextFontStyle.textStyle20w500c333333,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20),
+                          child: Text(
+                            'View All',
+                            style: TextFontStyle.textStyle16w400c00BFA6,
+                          ),
+                        ),
+                      ],
+                    ),
+                    UIHelper.verticalSpace(16.h),
+                    SeminarContainer(),
+                    UIHelper.verticalSpace(8.h),
+                    SeminarContainer(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

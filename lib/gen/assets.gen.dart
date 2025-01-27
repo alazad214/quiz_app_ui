@@ -73,12 +73,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/comment.png
   AssetGenImage get comment => const AssetGenImage('assets/icons/comment.png');
 
+  /// File path: assets/icons/medal-star.png
+  AssetGenImage get medalStar =>
+      const AssetGenImage('assets/icons/medal-star.png');
+
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
       const AssetGenImage('assets/icons/message-minus.png');
 
-  /// File path: assets/icons/notification.svg
-  String get notification => 'assets/icons/notification.svg';
+  /// File path: assets/icons/notification.png
+  AssetGenImage get notification =>
+      const AssetGenImage('assets/icons/notification.png');
 
   /// File path: assets/icons/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/icons/profile.png');
@@ -115,6 +120,7 @@ class $AssetsIconsGen {
         backIcon,
         closeCircle,
         comment,
+        medalStar,
         messageMinus,
         notification,
         profile,
@@ -187,6 +193,9 @@ class $AssetsImagesGen {
   AssetGenImage get profileAvatar =>
       const AssetGenImage('assets/images/profile avatar.png');
 
+  /// File path: assets/images/seminar.png
+  AssetGenImage get seminar => const AssetGenImage('assets/images/seminar.png');
+
   /// File path: assets/images/slider_image.png
   AssetGenImage get sliderImage =>
       const AssetGenImage('assets/images/slider_image.png');
@@ -224,6 +233,7 @@ class $AssetsImagesGen {
         person,
         placeholderImage,
         profileAvatar,
+        seminar,
         sliderImage,
         vegina,
         welcomeBackground,
