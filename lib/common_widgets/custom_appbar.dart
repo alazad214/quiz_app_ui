@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/gen/assets.gen.dart';

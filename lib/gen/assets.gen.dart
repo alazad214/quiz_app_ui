@@ -105,6 +105,14 @@ class $AssetsIconsGen {
   AssetGenImage get medalStar =>
       const AssetGenImage('assets/icons/medal-star.png');
 
+  /// File path: assets/icons/flashcard.png
+  AssetGenImage get flashcard =>
+      const AssetGenImage('assets/icons/flashcard.png');
+
+  /// File path: assets/icons/flashcard2.png
+  AssetGenImage get flashcard2 =>
+      const AssetGenImage('assets/icons/flashcard2.png');
+
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
       const AssetGenImage('assets/icons/message-minus.png');
@@ -143,6 +151,15 @@ class $AssetsIconsGen {
   AssetGenImage get trippleArrow =>
       const AssetGenImage('assets/icons/tripple_arrow.png');
 
+  /// File path: assets/icons/undo.png
+  AssetGenImage get undo => const AssetGenImage('assets/icons/undo.png');
+
+  /// File path: assets/icons/undo2.png
+  AssetGenImage get undo2 => const AssetGenImage('assets/icons/undo2.png');
+
+  /// File path: assets/icons/undo3.png
+  AssetGenImage get undo3 => const AssetGenImage('assets/icons/undo3.png');
+
   /// List of all assets
   List<dynamic> get values => [
         check,
@@ -162,8 +179,9 @@ class $AssetsIconsGen {
         closeCircle,
         comment,
         dot,
-
         medalStar,
+        flashcard,
+        flashcard2,
         messageMinus,
         notification,
         profile,
@@ -174,7 +192,10 @@ class $AssetsIconsGen {
         shieldTick,
         star,
         success,
-        trippleArrow
+        trippleArrow,
+        undo,
+        undo2,
+        undo3
       ];
 }
 
@@ -210,12 +231,19 @@ class $AssetsImagesGen {
   /// File path: assets/images/brain.png
   AssetGenImage get brain => const AssetGenImage('assets/images/brain.png');
 
+  /// File path: assets/images/carasul.png
+  AssetGenImage get carasul => const AssetGenImage('assets/images/carasul.png');
+
   /// File path: assets/images/chest.png
   AssetGenImage get chest => const AssetGenImage('assets/images/chest.png');
 
   /// File path: assets/images/community.png
   AssetGenImage get community =>
       const AssetGenImage('assets/images/community.png');
+
+  /// File path: assets/images/congratulation.png
+  AssetGenImage get congratulation =>
+      const AssetGenImage('assets/images/congratulation.png');
 
   /// File path: assets/images/docuDrive.png
   AssetGenImage get docuDrive =>
@@ -290,8 +318,10 @@ class $AssetsImagesGen {
         anatomy,
         applogo,
         brain,
+        carasul,
         chest,
         community,
+        congratulation,
         docuDrive,
         errorImage,
         heart,

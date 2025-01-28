@@ -1,16 +1,17 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
+import 'package:mehdi0605/features/human_embryology/presentation/human_embryology_flashcard_screen.dart';
+import 'package:mehdi0605/features/human_embryology/presentation/result_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_question_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_suggested_answer.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_result_screen.dart';
-
 import '../features/authentication/presentation/login_screen.dart';
 import '../features/authentication/presentation/new_password.dart';
 import '../features/authentication/presentation/otp_verification_screen.dart';
 import '../features/authentication/presentation/signup_screen.dart';
 import '../features/home/presentation/homescreen.dart';
 import '../features/home/presentation/settings_screen.dart';
+import '../features/human_embryology/presentation/tap_card_screen.dart';
 
 final class Routes {
   static final Routes _routes = Routes._internal();
@@ -27,7 +28,11 @@ final class Routes {
   static const String oralExamSuggestedAnswerScreen =
       '/oral_exam_suggested_answer_screen';
   static const String oralResultScreen = '/oral_result_screen';
-  static const String settinstScreen = '/settinst_screen';
+  static const String settinstScreen = '/settinst_Screen';
+  static const String tapCardScreen = '/tapCard_screen';
+  static const String humanEmbryologyFlashcardScreen = '/humanEmbryology_Flashcard_Screen';
+  static const String resultScreen = '/result_screen';
+
 }
 
 final class RouteGenerator {
@@ -107,6 +112,32 @@ final class RouteGenerator {
         } else {
           return CupertinoPageRoute(
               builder: (context) => const SettingsScreen());
+        }
+
+      case Routes.tapCardScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget:  TapCardScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) =>  TapCardScreen());
+        }
+      case Routes.humanEmbryologyFlashcardScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget:  HumanEmbryologyFlashcardScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) =>  HumanEmbryologyFlashcardScreen());
+        }
+
+      case Routes.resultScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget:  ResultScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) =>  ResultScreen());
         }
 
       default:
