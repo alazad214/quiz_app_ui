@@ -85,7 +85,7 @@ class _HumanEmbryologyFlashcardScreenState extends State<HumanEmbryologyFlashcar
             ),
             UIHelper.verticalSpace(16.h),
             FlashCardLatinWidget(
-              text: 'Latin Terms',
+              text: 'Latin Term',
               borderColor: _selectedContainerIndex == 1
                   ? AppColors.primaryColor
                   : Colors.transparent,

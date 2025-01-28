@@ -32,25 +32,23 @@ class _FlashCardLatinWidgetState extends State<FlashCardLatinWidget> {
                   side: BorderSide(
                     color:widget.borderColor
                   )
-        
+
               )
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 25.r,
-                    backgroundColor: AppColors.cE6F9F6,
-                    child: Center(child: Image.asset(Assets.icons.flashcard.path)),
-                  ),
-                  UIHelper.horizontalSpace(16.w),
-                  Text(widget.text,style: TextFontStyle.textStyle16w500c333333,maxLines: 1,),
-                ],
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  radius: 25.r,
+                  backgroundColor: AppColors.cE6F9F6,
+                  child: Center(child: Image.asset(Assets.icons.flashcard.path)),
+                ),
+                UIHelper.horizontalSpace(16.w),
+                Expanded(child: Text(widget.text,style: TextFontStyle.textStyle16w500c333333,maxLines: 1,)),
+              ],
+            ),
           ),
         ),
       )
