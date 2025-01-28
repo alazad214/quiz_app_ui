@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:mehdi0605/features/authentication/presentation/forget_password_screen.dart';
+import 'package:mehdi0605/features/home/presentation/settings_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_question_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_suggested_answer.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_result_screen.dart';
@@ -24,9 +25,10 @@ final class Routes {
 
   //
   static const String oralExamQuestionScreen = '/oral_exam_question_screen';
-  static const String oralExamSuggestedAnswerScreen = '/oral_exam_suggested_answer_screen';
+  static const String oralExamSuggestedAnswerScreen =
+      '/oral_exam_suggested_answer_screen';
   static const String oralResultScreen = '/oral_result_screen';
-
+  static const String settinstScreen = '/settings_screen';
 }
 
 final class RouteGenerator {
@@ -72,10 +74,9 @@ final class RouteGenerator {
           return _FadedTransitionRoute(
               widget: const Homescreen(), settings: settings);
         } else {
-          return CupertinoPageRoute(
-              builder: (context) => const Homescreen());
+          return CupertinoPageRoute(builder: (context) => const Homescreen());
         }
-        //
+      //
       case Routes.oralExamQuestionScreen:
         if (Platform.isAndroid) {
           return _FadedTransitionRoute(
@@ -100,6 +101,14 @@ final class RouteGenerator {
         } else {
           return CupertinoPageRoute(
               builder: (context) => const OralResultScreen());
+        }
+      case Routes.settinstScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: const SettingsScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) => const SettingsScreen());
         }
 
       default:

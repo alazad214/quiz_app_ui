@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/features/home/presentation/homescreen.dart';
+import 'package:mehdi0605/features/home/presentation/profilescreen.dart';
 
 class NavigationScreen extends StatefulWidget {
   @override
@@ -125,12 +126,5 @@ class ForumPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(child: Text("Forum Page", style: TextStyle(fontSize: 24)));
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text("Profile Page", style: TextStyle(fontSize: 24)));
   }
 }
