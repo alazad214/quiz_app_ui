@@ -118,8 +118,7 @@ class _HomescreenState extends State<Homescreen> {
                         UIHelper.horizontalSpaceSmall,
                         InkWell(
                           onTap: () {
-
-                            Get.to(()=>NotificationScreen());
+                            Get.to(() => NotificationScreen());
                           },
                           child: Image.asset(
                             Assets.icons.notification.path,
@@ -176,6 +175,14 @@ class _HomescreenState extends State<Homescreen> {
               UIHelper.verticalSpace(16.h),
               ExamGridView(examcategoryimages: examimages),
               UIHelper.verticalSpace(16.h),
+              Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Text(
+                  'Latest from Community',
+                  style: TextFontStyle.textStyle20w500c333333,
+                ),
+              ),
+              UIHelper.verticalSpace(16.h),
               Container(
                 child: Column(
                   children: [
@@ -184,7 +191,6 @@ class _HomescreenState extends State<Homescreen> {
                         aspectRatio: 2.1,
                         scrollDirection: Axis.horizontal,
                         autoPlay: true,
-                        enlargeCenterPage: true,
                         viewportFraction: 0.8,
                         onPageChanged: (index, reason) {
                           setState(() {
@@ -198,8 +204,7 @@ class _HomescreenState extends State<Homescreen> {
                         return Builder(
                           builder: (BuildContext context) {
                             return Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 8.0),
+                              padding: EdgeInsets.symmetric(vertical: 8.sp),
                               child: Container(
                                 margin: const EdgeInsets.symmetric(
                                     horizontal: 8.0), // Add margin for spacing
@@ -256,15 +261,38 @@ class _HomescreenState extends State<Homescreen> {
                                       ],
                                     ),
                                     UIHelper.verticalSpace(10.h),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 16.0),
-                                      child: Text(
-                                        carouselItem['text'],
-                                        style: TextFontStyle
-                                            .textStyle14w400c767676helvatica,
-                                        textAlign: TextAlign.justify,
-                                      ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 16.0),
+                                          child: Text(
+                                            carouselItem['text'],
+                                            style: TextFontStyle
+                                                .textStyle14w400c767676helvatica,
+                                            textAlign: TextAlign.justify,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10, top: 10),
+                                          child: Row(
+                                            children: [
+                                              Image.asset(
+                                                Assets.icons.star.path,
+                                                height: 20,
+                                              ),
+                                              UIHelper.horizontalSpace( 10),
+                                              Image.asset(
+                                                Assets.icons.comment.path,
+                                                height: 25,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
@@ -309,9 +337,15 @@ class _HomescreenState extends State<Homescreen> {
                       ],
                     ),
                     UIHelper.verticalSpace(16.h),
-                    SeminarContainer(),
+                    SeminarContainer(
+                      carouselLength: carouselData.length,
+                      carouselImage: carouselData[_currentIndex]['image'],
+                    ),
                     UIHelper.verticalSpace(8.h),
-                    SeminarContainer(),
+                    SeminarContainer(
+                      carouselLength: carouselData.length,
+                      carouselImage: carouselData[_currentIndex]['image'],
+                    ),
                   ],
                 ),
               ),

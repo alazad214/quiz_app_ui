@@ -1,15 +1,16 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:mehdi0605/features/authentication/presentation/new_password.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_question_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_suggested_answer.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_result_screen.dart';
 
 import '../features/authentication/presentation/login_screen.dart';
+import '../features/authentication/presentation/new_password.dart';
 import '../features/authentication/presentation/otp_verification_screen.dart';
 import '../features/authentication/presentation/signup_screen.dart';
 import '../features/home/presentation/homescreen.dart';
+import '../features/home/presentation/settings_screen.dart';
 
 final class Routes {
   static final Routes _routes = Routes._internal();
@@ -26,6 +27,7 @@ final class Routes {
   static const String oralExamSuggestedAnswerScreen =
       '/oral_exam_suggested_answer_screen';
   static const String oralResultScreen = '/oral_result_screen';
+  static const String settinstScreen = '/settinst_screen';
 }
 
 final class RouteGenerator {
@@ -51,11 +53,11 @@ final class RouteGenerator {
           return CupertinoPageRoute(builder: (context) => const SignupScreen());
         }
       case Routes.newPasswprd:
-        if (Platform.isAndroid) {
+        if (Platform.isAndroid) {   
           return _FadedTransitionRoute(
-              widget: const NewPassword(), settings: settings);
+              widget: NewPassword(), settings: settings);
         } else {
-          return CupertinoPageRoute(builder: (context) => const NewPassword());
+          return CupertinoPageRoute(builder: (context) => NewPassword());
         }
       case Routes.otpVerification:
         if (Platform.isAndroid) {
@@ -97,6 +99,14 @@ final class RouteGenerator {
         } else {
           return CupertinoPageRoute(
               builder: (context) => const OralResultScreen());
+        }
+      case Routes.settinstScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: const SettingsScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) => const SettingsScreen());
         }
 
       default:

@@ -41,14 +41,20 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/Check.png
+  AssetGenImage get check => const AssetGenImage('assets/icons/Check.png');
+
   /// File path: assets/icons/Google.png
   AssetGenImage get googlePng => const AssetGenImage('assets/icons/Google.png');
 
   /// File path: assets/icons/google.svg
   String get googleSvg => 'assets/icons/google.svg';
 
+  /// File path: assets/icons/Help.png
+  AssetGenImage get helpPng => const AssetGenImage('assets/icons/Help.png');
+
   /// File path: assets/icons/Help.svg
-  String get help => 'assets/icons/Help.svg';
+  String get helpSvg => 'assets/icons/Help.svg';
 
   /// File path: assets/icons/Home.png
   AssetGenImage get home => const AssetGenImage('assets/icons/Home.png');
@@ -91,6 +97,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/dot.png
   AssetGenImage get dot => const AssetGenImage('assets/icons/dot.png');
 
+  /// File path: assets/icons/location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/icons/location.png');
+
   /// File path: assets/icons/medal-star.png
   AssetGenImage get medalStar =>
       const AssetGenImage('assets/icons/medal-star.png');
@@ -119,6 +129,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/share.png
   AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
 
+  /// File path: assets/icons/shield-tick.png
+  AssetGenImage get shieldTick =>
+      const AssetGenImage('assets/icons/shield-tick.png');
+
   /// File path: assets/icons/star.png
   AssetGenImage get star => const AssetGenImage('assets/icons/star.png');
 
@@ -131,9 +145,11 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<dynamic> get values => [
+        check,
         googlePng,
         googleSvg,
-        help,
+        helpPng,
+        helpSvg,
         home,
         alarmclock,
         arrowDown,
@@ -146,6 +162,7 @@ class $AssetsIconsGen {
         closeCircle,
         comment,
         dot,
+
         medalStar,
         messageMinus,
         notification,
@@ -154,6 +171,7 @@ class $AssetsIconsGen {
         search,
         send,
         share,
+        shieldTick,
         star,
         success,
         trippleArrow
@@ -243,6 +261,10 @@ class $AssetsImagesGen {
   AssetGenImage get sliderImage =>
       const AssetGenImage('assets/images/slider_image.png');
 
+  /// File path: assets/images/update_image.png
+  AssetGenImage get updateImage =>
+      const AssetGenImage('assets/images/update_image.png');
+
   /// File path: assets/images/vegina.png
   AssetGenImage get vegina => const AssetGenImage('assets/images/vegina.png');
 
@@ -282,6 +304,7 @@ class $AssetsImagesGen {
         profileAvatar,
         seminar,
         sliderImage,
+        updateImage,
         vegina,
         welcomeBackground,
         welcomeImage,
