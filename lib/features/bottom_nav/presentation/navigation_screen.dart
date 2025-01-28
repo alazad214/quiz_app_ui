@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/features/home/presentation/homescreen.dart';
 
+import '../../cummunity/presentation/community_screen.dart';
+
 class NavigationScreen extends StatefulWidget {
   @override
   State<NavigationScreen> createState() => _NavigationScreenState();
@@ -13,8 +15,8 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   final List<Widget> pages = [
     Homescreen(),
-    MessagePage(),
-    ForumPage(),
+    CommunityScreen(),
+    CommunityScreen(),
     ProfilePage(),
   ];
 
@@ -101,8 +103,8 @@ List<IconData> icons = [
 
 List<String> labels = [
   "Home",
-  "Message",
   "Forum",
+  "Webinar ",
   "Profile",
 ];
 

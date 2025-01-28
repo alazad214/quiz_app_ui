@@ -6,7 +6,6 @@ import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-
 import '../../../helpers/all_routes.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
@@ -75,7 +74,6 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     errorBorderColor: AppColors.cED2D6B,
                     errorBorderWidth: 1,
                   ),
-                  //enableActiveFill: true,
                   controller: _optTEController,
                   onCompleted: (v) {
                     print("Completed");
@@ -84,11 +82,6 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     print(value);
                     setState(() {});
                   },
-                  // beforeTextPaste: (text) {
-                  //   print("Allowing to paste $text");
-                  //   // Logic for handling text paste
-                  //   return true;
-                  // },
                 ),
                 UIHelper.verticalSpaceSmall,
                 Center(
@@ -114,7 +107,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     textStyle: TextFontStyle.textStyle16w500cFFFFFF,
                     onCallBack: () {
                       NavigationService.navigateToUntilReplacement(
-                          Routes.homePage);
+                          Routes.newPasswprd);
                     },
                     context: context),
               ],

@@ -78,6 +78,9 @@ class $AssetsIconsGen {
   AssetGenImage get backIcon =>
       const AssetGenImage('assets/icons/back_icon.png');
 
+  /// File path: assets/icons/chat-box.png
+  AssetGenImage get chatBox => const AssetGenImage('assets/icons/chat-box.png');
+
   /// File path: assets/icons/close-circle.png
   AssetGenImage get closeCircle =>
       const AssetGenImage('assets/icons/close-circle.png');
@@ -85,14 +88,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/comment.png
   AssetGenImage get comment => const AssetGenImage('assets/icons/comment.png');
 
-
   /// File path: assets/icons/dot.png
   AssetGenImage get dot => const AssetGenImage('assets/icons/dot.png');
 
   /// File path: assets/icons/medal-star.png
   AssetGenImage get medalStar =>
       const AssetGenImage('assets/icons/medal-star.png');
-
 
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
@@ -111,6 +112,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/search.png
   AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
+
+  /// File path: assets/icons/send.png
+  AssetGenImage get send => const AssetGenImage('assets/icons/send.png');
 
   /// File path: assets/icons/share.png
   AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
@@ -138,18 +142,17 @@ class $AssetsIconsGen {
         arrowRightSvg,
         arrowleft,
         backIcon,
+        chatBox,
         closeCircle,
         comment,
-
         dot,
-
         medalStar,
-
         messageMinus,
         notification,
         profile,
         searchNormal,
         search,
+        send,
         share,
         star,
         success,
@@ -191,6 +194,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/chest.png
   AssetGenImage get chest => const AssetGenImage('assets/images/chest.png');
+
+  /// File path: assets/images/community.png
+  AssetGenImage get community =>
+      const AssetGenImage('assets/images/community.png');
 
   /// File path: assets/images/docuDrive.png
   AssetGenImage get docuDrive =>
@@ -262,6 +269,7 @@ class $AssetsImagesGen {
         applogo,
         brain,
         chest,
+        community,
         docuDrive,
         errorImage,
         heart,

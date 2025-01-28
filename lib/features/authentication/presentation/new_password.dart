@@ -9,14 +9,14 @@ import 'package:mehdi0605/helpers/ui_helpers.dart';
 
 import '../../../helpers/all_routes.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({super.key});
+class NewPassword extends StatefulWidget {
+  const NewPassword({super.key});
 
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<NewPassword> createState() => _NewPasswordState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _NewPasswordState extends State<NewPassword> {
   bool _obscureText1 = false;
   bool _obscureText2 = false;
 
@@ -80,8 +80,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   name: 'Continue',
                   textStyle: TextFontStyle.textStyle16w500cFFFFFF,
                   onCallBack: () {
-                    NavigationService.navigateToReplacement(
-                        Routes.otpVerification);
+                    NavigationService.navigateToUntilReplacement(Routes.login);
                   },
                   context: context,
                 ),

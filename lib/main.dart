@@ -11,7 +11,6 @@ import 'helpers/navigation_service.dart';
 import 'networks/dio/dio.dart';
 import 'networks/internet_checker/internet_checker_controller.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();

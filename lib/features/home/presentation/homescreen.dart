@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:mehdi0605/common_widgets/exam_preparation_gridview.dart';
 import 'package:mehdi0605/common_widgets/seminar_container.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:mehdi0605/features/home/widgets/choice_topic_items.dart';
+import 'package:mehdi0605/features/notification/presentation/notification_screen.dart';
 import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -86,7 +88,7 @@ class _HomescreenState extends State<Homescreen> {
             children: [
               UIHelper.verticalSpaceMedium,
               Padding(
-                padding: const EdgeInsets.only(left: 16),
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: Column(
                   children: [
                     Row(
@@ -105,26 +107,23 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                           ],
                         ),
-                        UIHelper.horizontalSpace(169.w),
+                        Spacer(),
                         GestureDetector(
                           onTap: () {},
-                          child: SizedBox(
-                            height: 24.h,
-                            width: 24.w,
-                            child: Image.asset(
-                              Assets.icons.medalStar.path,
-                            ),
+                          child: Image.asset(
+                            Assets.icons.medalStar.path,
+                            height: 25.h,
                           ),
                         ),
                         UIHelper.horizontalSpaceSmall,
-                        GestureDetector(
-                          onTap: () {},
-                          child: SizedBox(
-                            height: 24.h,
-                            width: 24.w,
-                            child: Image.asset(
-                              Assets.icons.notification.path,
-                            ),
+                        InkWell(
+                          onTap: () {
+
+                            Get.to(()=>NotificationScreen());
+                          },
+                          child: Image.asset(
+                            Assets.icons.notification.path,
+                            height: 25.h,
                           ),
                         ),
                       ],
