@@ -77,6 +77,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/comment.png
   AssetGenImage get comment => const AssetGenImage('assets/icons/comment.png');
 
+  /// File path: assets/icons/flashcard.png
+  AssetGenImage get flashcard =>
+      const AssetGenImage('assets/icons/flashcard.png');
+
+  /// File path: assets/icons/flashcard2.png
+  AssetGenImage get flashcard2 =>
+      const AssetGenImage('assets/icons/flashcard2.png');
+
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
       const AssetGenImage('assets/icons/message-minus.png');
@@ -107,6 +115,15 @@ class $AssetsIconsGen {
   AssetGenImage get trippleArrow =>
       const AssetGenImage('assets/icons/tripple_arrow.png');
 
+  /// File path: assets/icons/undo.png
+  AssetGenImage get undo => const AssetGenImage('assets/icons/undo.png');
+
+  /// File path: assets/icons/undo2.png
+  AssetGenImage get undo2 => const AssetGenImage('assets/icons/undo2.png');
+
+  /// File path: assets/icons/undo3.png
+  AssetGenImage get undo3 => const AssetGenImage('assets/icons/undo3.png');
+
   /// List of all assets
   List<dynamic> get values => [
         googlePng,
@@ -120,6 +137,8 @@ class $AssetsIconsGen {
         backIcon,
         closeCircle,
         comment,
+        flashcard,
+        flashcard2,
         messageMinus,
         notification,
         profile,
@@ -128,7 +147,10 @@ class $AssetsIconsGen {
         share,
         star,
         success,
-        trippleArrow
+        trippleArrow,
+        undo,
+        undo2,
+        undo3
       ];
 }
 
@@ -156,8 +178,15 @@ class $AssetsImagesGen {
   /// File path: assets/images/brain.png
   AssetGenImage get brain => const AssetGenImage('assets/images/brain.png');
 
+  /// File path: assets/images/carasul.png
+  AssetGenImage get carasul => const AssetGenImage('assets/images/carasul.png');
+
   /// File path: assets/images/chest.png
   AssetGenImage get chest => const AssetGenImage('assets/images/chest.png');
+
+  /// File path: assets/images/congratulation.png
+  AssetGenImage get congratulation =>
+      const AssetGenImage('assets/images/congratulation.png');
 
   /// File path: assets/images/docuDrive.png
   AssetGenImage get docuDrive =>
@@ -219,7 +248,9 @@ class $AssetsImagesGen {
         stateExam,
         applogo,
         brain,
+        carasul,
         chest,
+        congratulation,
         docuDrive,
         errorImage,
         heart,

@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:mehdi0605/features/authentication/presentation/forget_password_screen.dart';
+import 'package:mehdi0605/features/human_embryology/presentation/human_embryology_flashcard_screen.dart';
+import 'package:mehdi0605/features/human_embryology/presentation/result_screen.dart';
+import 'package:mehdi0605/features/human_embryology/presentation/tap_card_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_question_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_suggested_answer.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_result_screen.dart';
@@ -26,6 +29,10 @@ final class Routes {
   static const String oralExamQuestionScreen = '/oral_exam_question_screen';
   static const String oralExamSuggestedAnswerScreen = '/oral_exam_suggested_answer_screen';
   static const String oralResultScreen = '/oral_result_screen';
+  static const String tapCardScreen = '/tap_card_screen';
+  static const String humanEmbryologyFlashcardScreen = '/human_embryology_flash_screen';
+  static const String resultScreen = '/result_screen';
+
 
 }
 
@@ -100,6 +107,32 @@ final class RouteGenerator {
         } else {
           return CupertinoPageRoute(
               builder: (context) => const OralResultScreen());
+        }
+
+      case Routes.tapCardScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget:  TapCardScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) =>  TapCardScreen());
+        }
+      case Routes.humanEmbryologyFlashcardScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget:  HumanEmbryologyFlashcardScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) =>  HumanEmbryologyFlashcardScreen());
+        }
+
+      case Routes.resultScreen:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget:  ResultScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(
+              builder: (context) =>  ResultScreen());
         }
 
       default:
