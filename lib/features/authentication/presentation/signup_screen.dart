@@ -1,13 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/common_widgets/custom_textfeild.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
+import 'package:mehdi0605/features/bottom_nav/presentation/navigation_screen.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
-
 import '../../../helpers/all_routes.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -22,12 +23,11 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
+      body: SafeArea(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SizedBox(height: 100),
               Padding(
                 padding: const EdgeInsets.all(24),
                 child: Column(
@@ -62,6 +62,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     UIHelper.verticalSpaceMedium,
                     CustomTextfield(
                       hintText: 'DD.MM.YY',
+                      suffixIcon: IconButton(
+                          onPressed: () {}, icon: Icon(Icons.calendar_month)),
                     ),
                     UIHelper.verticalSpaceMedium,
                     Row(
@@ -134,8 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         name: 'Sign Up',
                         textStyle: TextFontStyle.textStyle16w500cFFFFFF,
                         onCallBack: () {
-                          NavigationService.navigateToUntilReplacement(
-                              Routes.homePage);
+                          Get.offAll(() => NavigationScreen());
                         },
                         context: context),
                     UIHelper.verticalSpaceMedium,

@@ -12,6 +12,11 @@ class TextFontStyle {
     fontSize: 24.sp,
     fontWeight: FontWeight.w700,
   );
+  static var headline24w500c0CC0DF = GoogleFonts.poppins(
+    color: AppColors.c333333,
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w500,
+  );
   static var textStyle26w700ccFFFFFF = GoogleFonts.poppins(
     color: AppColors.cFFFFFF,
     fontSize: 26.sp,
@@ -96,7 +101,7 @@ class TextFontStyle {
   );
   static var textStyle16400c333333helvatica = TextStyle(
     fontFamily: 'HelveticaNeueRoman.otf',
-    fontSize: 14.sp,
+    fontSize: 16.sp,
     color: AppColors.c333333,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
@@ -115,7 +120,7 @@ class TextFontStyle {
     fontWeight: FontWeight.w700,
     fontStyle: FontStyle.normal,
   );
-  static var textStyle16w500cFF6B6B = TextStyle(
+  static var textStyle16w500cFF6B6Bhelvatica = TextStyle(
     fontFamily: 'HelveticaNeueRoman.otf',
     fontSize: 16.sp,
     color: AppColors.cFF6B6B,
@@ -142,6 +147,12 @@ class TextFontStyle {
     color: AppColors.c00BFA6,
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
+  );
+  static var textStyle20w500c222222 = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    color: AppColors.c222222,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w500,
   );
 
 //old------------->>>>
@@ -203,4 +214,41 @@ class TextFontStyle {
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
   );
+
+  static var textStyle16w500cFF6B6B = GoogleFonts.poppins(
+    color: AppColors.cFF6B6B,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
+
+
+  static var textStyle16w500cFEFEFE = GoogleFonts.poppins(
+    color: AppColors.cFEFEFE,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+
+  static var textStyle18w700c333333 = GoogleFonts.poppins(
+    color: AppColors.c333333,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+  );
+
+  static var textStyle16w400c767676helvatica = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    fontSize: 16.sp,
+    color: AppColors.c767676,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
+
+  static var textStyle16w500c767676helvatica = TextStyle(
+    fontFamily: 'HelveticaNeueRoman.otf',
+    fontSize: 16.sp,
+    color: AppColors.c767676,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+  );
+
+
 }
