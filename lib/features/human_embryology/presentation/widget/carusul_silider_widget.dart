@@ -21,6 +21,7 @@ class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
       children: [
         CarouselSlider(
           options: CarouselOptions(
+            autoPlay: true,
             height: 200,
             viewportFraction: 1,
             onPageChanged: (currentIndex, reason) {

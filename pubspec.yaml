@@ -64,8 +64,6 @@ dependencies:
   connectivity_plus: ^6.1.2
   slider_button: ^2.1.0
   flip_card: ^0.7.0
-  flutter_flip_card: ^0.0.6
-
 
   
 

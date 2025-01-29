@@ -1,5 +1,9 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
@@ -15,6 +19,93 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  Uint8List? _image;
+  File? selectedImage;
+
+  // Function to pick image from gallery
+  Future _pickImageFromGallery() async {
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        selectedImage = File(pickedFile.path);
+        _image = selectedImage!.readAsBytesSync();
+      });
+    }
+  }
+
+  // Function to pick image from camera
+  Future _pickImageFromCamera() async {
+    final pickedFile =
+        await ImagePicker().pickImage(source: ImageSource.camera);
+    if (pickedFile != null) {
+      setState(() {
+        selectedImage = File(pickedFile.path);
+        _image = selectedImage!.readAsBytesSync();
+      });
+    }
+  }
+
+  // Show the bottom sheet with options to choose from
+  void showImagePickerOption(BuildContext context) {
+    showModalBottomSheet(
+      backgroundColor: AppColors.cE8ECEC,
+      context: context,
+      builder: (BuildContext context) {
+        return SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 0.27,
+          child: Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(10.r),
+                    onTap: () {
+                      _pickImageFromGallery();
+                      Navigator.pop(context);
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.image,
+                          size: 70,
+                        ),
+                        Text('Gallery'),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(10.r),
+                    focusColor: AppColors.primaryColor,
+                    onTap: () {
+                      _pickImageFromCamera();
+                      Navigator.pop(context);
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.camera_alt,
+                          size: 70,
+                        ),
+                        Text('Camera'),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,16 +123,22 @@ class _ProfilePageState extends State<ProfilePage> {
                         Row(
                           children: [
                             Stack(
-                              alignment: Alignment
-                                  .bottomRight, // Adjusts the alignment of the children in the stack
+                              alignment: Alignment.bottomRight,
                               children: [
-                                CircleAvatar(
-                                  radius: 34, // Background circle size
-                                  backgroundImage:
-                                      AssetImage('assets/images/person.png'),
-                                ),
+                                _image != null
+                                    ? CircleAvatar(
+                                        radius: 34,
+                                        backgroundImage: MemoryImage(_image!),
+                                      )
+                                    : CircleAvatar(
+                                        radius: 34,
+                                        backgroundImage: const AssetImage(
+                                            'assets/images/person.png'),
+                                      ),
                                 GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    showImagePickerOption(context);
+                                  },
                                   child: Image.asset(
                                     'assets/images/update_image.png',
                                     height: 32,
@@ -57,8 +154,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               child: GestureDetector(
                                 onTap: () {
                                   NavigationService.navigateTo(
-                                    Routes.settinstScreen,
-                                  );
+                                      Routes.settinstScreen);
                                 },
                                 child: const Icon(
                                   Icons.settings_outlined,
@@ -101,11 +197,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(.0),
+                      padding: const EdgeInsets.all(0.0),
                       child: Padding(
                         padding: const EdgeInsets.all(24.0),
                         child: Column(
                           children: [
+                            UIHelper.verticalSpace(14.h),
                             Row(
                               children: [
                                 Row(
@@ -197,7 +294,6 @@ class _ProfilePageState extends State<ProfilePage> {
                               ],
                             ),
                             UIHelper.verticalSpace(6.w),
-                            Divider(),
                           ],
                         ),
                       ),

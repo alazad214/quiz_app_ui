@@ -28,7 +28,7 @@ class _LearnExamButtonState extends State<LearnExamButton> {
           onPressed:widget.onTap,
           child: Text(
             widget.buttonName,
-            style:widget.textColor
+            style:widget.textColor,maxLines: 1,
           )),
     );
   }
