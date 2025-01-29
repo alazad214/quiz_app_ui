@@ -97,14 +97,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/dot.png
   AssetGenImage get dot => const AssetGenImage('assets/icons/dot.png');
 
-  /// File path: assets/icons/location.png
-  AssetGenImage get location =>
-      const AssetGenImage('assets/icons/location.png');
-
-  /// File path: assets/icons/medal-star.png
-  AssetGenImage get medalStar =>
-      const AssetGenImage('assets/icons/medal-star.png');
-
   /// File path: assets/icons/flashcard.png
   AssetGenImage get flashcard =>
       const AssetGenImage('assets/icons/flashcard.png');
@@ -113,6 +105,17 @@ class $AssetsIconsGen {
   AssetGenImage get flashcard2 =>
       const AssetGenImage('assets/icons/flashcard2.png');
 
+  /// File path: assets/icons/location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/icons/location.png');
+
+  /// File path: assets/icons/mcq.png
+  AssetGenImage get mcq => const AssetGenImage('assets/icons/mcq.png');
+
+  /// File path: assets/icons/medal-star.png
+  AssetGenImage get medalStar =>
+      const AssetGenImage('assets/icons/medal-star.png');
+
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
       const AssetGenImage('assets/icons/message-minus.png');
@@ -120,6 +123,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notification.png
   AssetGenImage get notification =>
       const AssetGenImage('assets/icons/notification.png');
+
+  /// File path: assets/icons/oral.png
+  AssetGenImage get oral => const AssetGenImage('assets/icons/oral.png');
 
   /// File path: assets/icons/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/icons/profile.png');
@@ -143,6 +149,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/star.png
   AssetGenImage get star => const AssetGenImage('assets/icons/star.png');
+
+  /// File path: assets/icons/state.png
+  AssetGenImage get state => const AssetGenImage('assets/icons/state.png');
 
   /// File path: assets/icons/success.png
   AssetGenImage get success => const AssetGenImage('assets/icons/success.png');
@@ -179,11 +188,14 @@ class $AssetsIconsGen {
         closeCircle,
         comment,
         dot,
-        medalStar,
         flashcard,
         flashcard2,
+        location,
+        mcq,
+        medalStar,
         messageMinus,
         notification,
+        oral,
         profile,
         searchNormal,
         search,
@@ -191,6 +203,7 @@ class $AssetsIconsGen {
         share,
         shieldTick,
         star,
+        state,
         success,
         trippleArrow,
         undo,

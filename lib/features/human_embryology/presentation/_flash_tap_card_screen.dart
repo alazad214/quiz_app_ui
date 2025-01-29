@@ -9,12 +9,12 @@ import 'package:mehdi0605/helpers/ui_helpers.dart';
 import '../../../constants/text_font_style.dart';
 import '../../../gen/assets.gen.dart';
 
-class TapCardScreen extends StatefulWidget {
+class FlashTapCardScreen extends StatefulWidget {
   @override
-  _TapCardScreenState createState() => _TapCardScreenState();
+  _FlashTapCardScreenState createState() => _FlashTapCardScreenState();
 }
 
-class _TapCardScreenState extends State<TapCardScreen> {
+class _FlashTapCardScreenState extends State<FlashTapCardScreen> {
   int currentIndex = 0; // Tracks the current question index
   final int totalQuestions = 10; // Total number of questions
 
@@ -48,7 +48,7 @@ class _TapCardScreenState extends State<TapCardScreen> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +81,8 @@ class _TapCardScreenState extends State<TapCardScreen> {
             ),
            UIHelper.verticalSpace(16.h),
             FlipCardWidget(),
-            Spacer(),
+            // Spacer(),
+            UIHelper.verticalSpace(40.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
