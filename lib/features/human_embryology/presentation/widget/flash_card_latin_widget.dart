@@ -7,11 +7,13 @@ import '../../../../constants/text_font_style.dart';
 import '../../../../helpers/ui_helpers.dart';
 
 class FlashCardLatinWidget extends StatefulWidget {
+  final String text;
+  final Color borderColor;
+  final VoidCallback onTap;
+  final Widget img;
+
   const FlashCardLatinWidget({super.key, required this.text, required this.borderColor, required this.onTap, required this.img});
-      final String text;
-      final Color borderColor;
-      final VoidCallback onTap;
-      final Widget img;
+
   @override
   State<FlashCardLatinWidget> createState() => _FlashCardLatinWidgetState();
 }

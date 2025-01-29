@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:mehdi0605/common_widgets/exam_preparation_gridview.dart';
 import 'package:mehdi0605/common_widgets/seminar_container.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -9,7 +8,6 @@ import 'package:mehdi0605/features/home/widgets/choice_topic_items.dart';
 import 'package:mehdi0605/features/notification/presentation/notification_screen.dart';
 import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../constants/text_font_style.dart';
 import '../../human_embryology/presentation/human_embryology_flashcard_screen.dart';
 
@@ -165,16 +163,16 @@ class _HomescreenState extends State<Homescreen> {
                 height: 200.h,
                 child: topicsGridView(),
               ),
-              UIHelper.verticalSpace(54.h),
-              Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Text(
-                  'Exam Preparation',
-                  style: TextFontStyle.textStyle20w500c333333,
-                ),
-              ),
-              UIHelper.verticalSpace(16.h),
-              ExamGridView(examcategoryimages: examimages),
+              // UIHelper.verticalSpace(54.h),
+              // Padding(
+              //   padding: const EdgeInsets.only(left: 16),
+              //   child: Text(
+              //     'Exam Preparation',
+              //     style: TextFontStyle.textStyle20w500c333333,
+              //   ),
+              // ),
+              // UIHelper.verticalSpace(16.h),
+              // ExamGridView(examcategoryimages: examimages),
               UIHelper.verticalSpace(16.h),
               Padding(
                 padding: const EdgeInsets.only(left: 16),
@@ -207,8 +205,8 @@ class _HomescreenState extends State<Homescreen> {
                             return Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.sp),
                               child: Container(
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 8.0), // Add margin for spacing
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.h),
                                   color: AppColors.cFFFFFF,
@@ -303,20 +301,6 @@ class _HomescreenState extends State<Homescreen> {
                         );
                       }).toList(),
                     ),
-                    UIHelper.verticalSpace(14.h),
-                    Center(
-                      child: SmoothPageIndicator(
-                        controller: _pageController, // Use PageController
-                        count: carouselData.length,
-                        effect: WormEffect(
-                          dotWidth: 8.0.w, // Adjust the dot size
-                          dotHeight: 8.0.h, // Adjust the dot size
-                          activeDotColor: AppColors.primaryColor,
-                          dotColor: AppColors.cC0C0C0C,
-                          spacing: 8.0.w, // Adjust spacing between dots
-                        ),
-                      ),
-                    ),
                     UIHelper.verticalSpace(16.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -347,6 +331,7 @@ class _HomescreenState extends State<Homescreen> {
                       carouselLength: carouselData.length,
                       carouselImage: carouselData[_currentIndex]['image'],
                     ),
+                    UIHelper.verticalSpace(30.h),
                   ],
                 ),
               ),
@@ -359,6 +344,7 @@ class _HomescreenState extends State<Homescreen> {
 
   GridView topicsGridView() {
     return GridView.builder(
+      physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.symmetric(horizontal: 8.w),
       itemCount: topicitem.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

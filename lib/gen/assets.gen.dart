@@ -113,6 +113,17 @@ class $AssetsIconsGen {
   AssetGenImage get flashcard2 =>
       const AssetGenImage('assets/icons/flashcard2.png');
 
+  /// File path: assets/icons/location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/icons/location.png');
+
+  /// File path: assets/icons/mcq.png
+  AssetGenImage get mcq => const AssetGenImage('assets/icons/mcq.png');
+
+  /// File path: assets/icons/medal-star.png
+  AssetGenImage get medalStar =>
+      const AssetGenImage('assets/icons/medal-star.png');
+
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
       const AssetGenImage('assets/icons/message-minus.png');
@@ -192,6 +203,9 @@ class $AssetsIconsGen {
         dot,
         flashcard,
         flashcard2,
+        location,
+        mcq,
+        medalStar,
         messageMinus,
         notification,
         oral,
