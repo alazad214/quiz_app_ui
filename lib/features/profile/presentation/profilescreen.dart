@@ -138,6 +138,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               GestureDetector(
                                 onTap: () {
                                   showImagePickerOption(context);
+
+                                  NavigationService.navigateTo(
+                                      Routes.settingstScreen);
                                 },
                                 child: Image.asset(
                                   Assets.images.updateImage.path,
@@ -177,7 +180,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       backgroundColor: AppColors.cE8ECEC,
                       child: GestureDetector(
                         onTap: () {
-                          NavigationService.navigateTo(Routes.settinstScreen);
+                          NavigationService.navigateTo(Routes.settingstScreen);
                         },
                         child: Icon(
                           Icons.settings_outlined,
