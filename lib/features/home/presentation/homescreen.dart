@@ -276,15 +276,15 @@ class _HomescreenState extends State<Homescreen> {
                                           ),
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10, top: 10),
+                                          padding: const EdgeInsets.only(
+                                              left: 10, top: 10),
                                           child: Row(
                                             children: [
                                               Image.asset(
                                                 Assets.icons.star.path,
                                                 height: 20,
                                               ),
-                                              UIHelper.horizontalSpace( 10),
+                                              UIHelper.horizontalSpace(10),
                                               Image.asset(
                                                 Assets.icons.comment.path,
                                                 height: 25,
