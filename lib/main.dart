@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:mehdi0605/loading_screen.dart';
+import 'features/oral_exam/presentation/oral_exam_question_screen.dart';
 import 'helpers/all_routes.dart';
 import 'helpers/di.dart';
 import 'helpers/helper_methods.dart';
 import 'helpers/navigation_service.dart';
 import 'networks/dio/dio.dart';
 import 'networks/internet_checker/internet_checker_controller.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,7 +65,7 @@ class UtillScreenMobile extends StatelessWidget {
             },
             navigatorKey: NavigationService.navigatorKey,
             onGenerateRoute: RouteGenerator.generateRoute,
-            home: const Loading(),
+            home:  Loading(),
           ),
         );
       },

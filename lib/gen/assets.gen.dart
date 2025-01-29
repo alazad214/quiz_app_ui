@@ -84,6 +84,9 @@ class $AssetsIconsGen {
   AssetGenImage get backIcon =>
       const AssetGenImage('assets/icons/back_icon.png');
 
+  /// File path: assets/icons/chat-box.png
+  AssetGenImage get chatBox => const AssetGenImage('assets/icons/chat-box.png');
+
   /// File path: assets/icons/close-circle.png
   AssetGenImage get closeCircle =>
       const AssetGenImage('assets/icons/close-circle.png');
@@ -101,6 +104,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/medal-star.png
   AssetGenImage get medalStar =>
       const AssetGenImage('assets/icons/medal-star.png');
+
+  /// File path: assets/icons/flashcard.png
+  AssetGenImage get flashcard =>
+      const AssetGenImage('assets/icons/flashcard.png');
+
+  /// File path: assets/icons/flashcard2.png
+  AssetGenImage get flashcard2 =>
+      const AssetGenImage('assets/icons/flashcard2.png');
 
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
@@ -120,6 +131,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/search.png
   AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
 
+  /// File path: assets/icons/send.png
+  AssetGenImage get send => const AssetGenImage('assets/icons/send.png');
+
   /// File path: assets/icons/share.png
   AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
 
@@ -137,6 +151,15 @@ class $AssetsIconsGen {
   AssetGenImage get trippleArrow =>
       const AssetGenImage('assets/icons/tripple_arrow.png');
 
+  /// File path: assets/icons/undo.png
+  AssetGenImage get undo => const AssetGenImage('assets/icons/undo.png');
+
+  /// File path: assets/icons/undo2.png
+  AssetGenImage get undo2 => const AssetGenImage('assets/icons/undo2.png');
+
+  /// File path: assets/icons/undo3.png
+  AssetGenImage get undo3 => const AssetGenImage('assets/icons/undo3.png');
+
   /// List of all assets
   List<dynamic> get values => [
         check,
@@ -152,21 +175,27 @@ class $AssetsIconsGen {
         arrowRightSvg,
         arrowleft,
         backIcon,
+        chatBox,
         closeCircle,
         comment,
         dot,
-        location,
         medalStar,
+        flashcard,
+        flashcard2,
         messageMinus,
         notification,
         profile,
         searchNormal,
         search,
+        send,
         share,
         shieldTick,
         star,
         success,
-        trippleArrow
+        trippleArrow,
+        undo,
+        undo2,
+        undo3
       ];
 }
 
@@ -202,8 +231,19 @@ class $AssetsImagesGen {
   /// File path: assets/images/brain.png
   AssetGenImage get brain => const AssetGenImage('assets/images/brain.png');
 
+  /// File path: assets/images/carasul.png
+  AssetGenImage get carasul => const AssetGenImage('assets/images/carasul.png');
+
   /// File path: assets/images/chest.png
   AssetGenImage get chest => const AssetGenImage('assets/images/chest.png');
+
+  /// File path: assets/images/community.png
+  AssetGenImage get community =>
+      const AssetGenImage('assets/images/community.png');
+
+  /// File path: assets/images/congratulation.png
+  AssetGenImage get congratulation =>
+      const AssetGenImage('assets/images/congratulation.png');
 
   /// File path: assets/images/docuDrive.png
   AssetGenImage get docuDrive =>
@@ -278,7 +318,10 @@ class $AssetsImagesGen {
         anatomy,
         applogo,
         brain,
+        carasul,
         chest,
+        community,
+        congratulation,
         docuDrive,
         errorImage,
         heart,
