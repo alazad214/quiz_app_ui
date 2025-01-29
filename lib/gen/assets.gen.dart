@@ -56,6 +56,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Help.svg
   String get helpSvg => 'assets/icons/Help.svg';
 
+  /// File path: assets/icons/Home Icon.png
+  AssetGenImage get homeIcon =>
+      const AssetGenImage('assets/icons/Home Icon.png');
+
   /// File path: assets/icons/Home.png
   AssetGenImage get home => const AssetGenImage('assets/icons/Home.png');
 
@@ -94,16 +98,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/comment.png
   AssetGenImage get comment => const AssetGenImage('assets/icons/comment.png');
 
+  /// File path: assets/icons/community (2).png
+  AssetGenImage get community2 =>
+      const AssetGenImage('assets/icons/community (2).png');
+
   /// File path: assets/icons/dot.png
   AssetGenImage get dot => const AssetGenImage('assets/icons/dot.png');
-
-  /// File path: assets/icons/location.png
-  AssetGenImage get location =>
-      const AssetGenImage('assets/icons/location.png');
-
-  /// File path: assets/icons/medal-star.png
-  AssetGenImage get medalStar =>
-      const AssetGenImage('assets/icons/medal-star.png');
 
   /// File path: assets/icons/flashcard.png
   AssetGenImage get flashcard =>
@@ -112,6 +112,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/flashcard2.png
   AssetGenImage get flashcard2 =>
       const AssetGenImage('assets/icons/flashcard2.png');
+
+  /// File path: assets/icons/location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/icons/location.png');
+
+  /// File path: assets/icons/medal-star.png
+  AssetGenImage get medalStar =>
+      const AssetGenImage('assets/icons/medal-star.png');
 
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
@@ -160,6 +168,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/undo3.png
   AssetGenImage get undo3 => const AssetGenImage('assets/icons/undo3.png');
 
+  /// File path: assets/icons/webiner.png
+  AssetGenImage get webiner => const AssetGenImage('assets/icons/webiner.png');
+
   /// List of all assets
   List<dynamic> get values => [
         check,
@@ -167,6 +178,7 @@ class $AssetsIconsGen {
         googleSvg,
         helpPng,
         helpSvg,
+        homeIcon,
         home,
         alarmclock,
         arrowDown,
@@ -178,10 +190,12 @@ class $AssetsIconsGen {
         chatBox,
         closeCircle,
         comment,
+        community2,
         dot,
-        medalStar,
         flashcard,
         flashcard2,
+        location,
+        medalStar,
         messageMinus,
         notification,
         profile,
@@ -195,7 +209,8 @@ class $AssetsIconsGen {
         trippleArrow,
         undo,
         undo2,
-        undo3
+        undo3,
+        webiner
       ];
 }
 

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
+import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/features/home/presentation/homescreen.dart';
-import 'package:mehdi0605/features/home/presentation/profilescreen.dart';
+import 'package:mehdi0605/features/profile/presentation/profilescreen.dart';
+import 'package:mehdi0605/gen/assets.gen.dart';
 
 import '../../cummunity/presentation/community_screen.dart';
 
@@ -57,31 +59,31 @@ class _NavigationScreenState extends State<NavigationScreen> {
                       children: [
                         if (selectedIndex == index)
                           Container(
-                            width: 50,
-                            height: 50,
+                            width: 45.w,
+                            height: 45.h,
                             decoration: BoxDecoration(
                               color: Colors.teal,
                               shape: BoxShape.circle,
                             ),
                           ),
-                        Icon(
-                          icons[index],
+                        Image.asset(
+                          Images[index],
+                          width: 25.w,
+                          height: 25.h,
                           color: selectedIndex == index
                               ? Colors.white
-                              : Colors.grey,
-                          size: 26,
+                              : Colors.black87,
                         ),
                       ],
                     ),
                     SizedBox(height: 5),
                     Text(
                       labels[index],
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 12,
-                        fontWeight: selectedIndex == index
-                            ? FontWeight.bold
-                            : FontWeight.normal,
+                      style: TextFontStyle.textStyle12w400cA1A1A1.copyWith(
+                        fontSize: 12.sp,
+                        color: selectedIndex == index
+                            ? Colors.teal
+                            : Colors.black87,
                       ),
                     ),
                   ],
@@ -95,11 +97,11 @@ class _NavigationScreenState extends State<NavigationScreen> {
   }
 }
 
-List<IconData> icons = [
-  Icons.home,
-  Icons.message,
-  Icons.group,
-  Icons.person,
+List Images = [
+  Assets.icons.homeIcon.path,
+  Assets.icons.community2.path,
+  Assets.icons.webiner.path,
+  Assets.icons.profile.path,
 ];
 
 List<String> labels = [

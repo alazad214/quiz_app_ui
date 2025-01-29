@@ -19,7 +19,8 @@ class HumanEmbryologyFlashcardScreen extends StatefulWidget {
       _HumanEmbryologyFlashcardScreenState();
 }
 
-class _HumanEmbryologyFlashcardScreenState extends State<HumanEmbryologyFlashcardScreen> {
+class _HumanEmbryologyFlashcardScreenState
+    extends State<HumanEmbryologyFlashcardScreen> {
   int _selectedContainerIndex = -1;
   int _selectedButtonIndex = 0;
   @override
@@ -42,32 +43,36 @@ class _HumanEmbryologyFlashcardScreenState extends State<HumanEmbryologyFlashcar
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: LearnExamButton(buttonName: 'Learn',
-
-                    onTap: () {
+                    child: LearnExamButton(
+                  buttonName: 'Learn',
+                  onTap: () {
                     setState(() {
-                      _selectedButtonIndex=0;
+                      _selectedButtonIndex = 0;
                     });
-                    },
-                    backgroundColor: _selectedButtonIndex==0?AppColors.primaryColor:AppColors.cFFFFFF,
-                    textColor: _selectedButtonIndex==0?TextFontStyle.textStyle16w500cFEFEFE:TextFontStyle.textStyle14w500c242424,
-
-                  )
-                ),
+                  },
+                  backgroundColor: _selectedButtonIndex == 0
+                      ? AppColors.primaryColor
+                      : AppColors.cFFFFFF,
+                  textColor: _selectedButtonIndex == 0
+                      ? TextFontStyle.textStyle16w500cFEFEFE
+                      : TextFontStyle.textStyle14w500c242424,
+                )),
                 UIHelper.horizontalSpace(16.w),
                 Expanded(
-                  child:  LearnExamButton(buttonName: 'Exam',
-
-                    onTap: () {
-                      setState(() {
-                        _selectedButtonIndex=1;
-                      });
-                    },
-                    backgroundColor: _selectedButtonIndex==1?AppColors.primaryColor:AppColors.cFFFFFF,
-                    textColor: _selectedButtonIndex==1?TextFontStyle.textStyle16w500cFEFEFE:TextFontStyle.textStyle14w500c242424,
-
-                  )
-                ),
+                    child: LearnExamButton(
+                  buttonName: 'Exam',
+                  onTap: () {
+                    setState(() {
+                      _selectedButtonIndex = 1;
+                    });
+                  },
+                  backgroundColor: _selectedButtonIndex == 1
+                      ? AppColors.primaryColor
+                      : AppColors.cFFFFFF,
+                  textColor: _selectedButtonIndex == 1
+                      ? TextFontStyle.textStyle16w500cFEFEFE
+                      : TextFontStyle.textStyle14w500c242424,
+                )),
               ],
             ),
             UIHelper.verticalSpace(24.h),

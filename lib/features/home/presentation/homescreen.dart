@@ -11,6 +11,7 @@ import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../constants/text_font_style.dart';
+import '../../human_embryology/presentation/human_embryology_flashcard_screen.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -108,14 +109,14 @@ class _HomescreenState extends State<Homescreen> {
                           ],
                         ),
                         Spacer(),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Image.asset(
-                            Assets.icons.medalStar.path,
-                            height: 25.h,
-                          ),
-                        ),
-                        UIHelper.horizontalSpaceSmall,
+                        // GestureDetector(
+                        //   onTap: () {},
+                        //   child: Image.asset(
+                        //     Assets.icons.medalStar.path,
+                        //     height: 25.h,
+                        //   ),
+                        // ),
+                        // UIHelper.horizontalSpaceSmall,
                         InkWell(
                           onTap: () {
                             Get.to(() => NotificationScreen());
@@ -276,15 +277,15 @@ class _HomescreenState extends State<Homescreen> {
                                           ),
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10, top: 10),
+                                          padding: const EdgeInsets.only(
+                                              left: 10, top: 10),
                                           child: Row(
                                             children: [
                                               Image.asset(
                                                 Assets.icons.star.path,
                                                 height: 20,
                                               ),
-                                              UIHelper.horizontalSpace( 10),
+                                              UIHelper.horizontalSpace(10),
                                               Image.asset(
                                                 Assets.icons.comment.path,
                                                 height: 25,
@@ -365,9 +366,14 @@ class _HomescreenState extends State<Homescreen> {
         childAspectRatio: 1,
       ),
       itemBuilder: (context, index) {
-        return TopicsTile(
-          topics: topicitem[index]['category'],
-          topicimages: topicitem[index]['image'],
+        return InkWell(
+          onTap: () {
+            Get.to(() => HumanEmbryologyFlashcardScreen());
+          },
+          child: TopicsTile(
+            topics: topicitem[index]['category'],
+            topicimages: topicitem[index]['image'],
+          ),
         );
       },
     );

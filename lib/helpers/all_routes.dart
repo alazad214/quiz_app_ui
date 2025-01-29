@@ -10,7 +10,7 @@ import '../features/authentication/presentation/new_password.dart';
 import '../features/authentication/presentation/otp_verification_screen.dart';
 import '../features/authentication/presentation/signup_screen.dart';
 import '../features/home/presentation/homescreen.dart';
-import '../features/home/presentation/settings_screen.dart';
+import '../features/profile/presentation/settings_screen.dart';
 import '../features/human_embryology/presentation/tap_card_screen.dart';
 
 final class Routes {
