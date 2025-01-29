@@ -34,7 +34,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     backgroundImage: AssetImage('assets/images/person.png'),
                   ),
                   GestureDetector(
-                    onTap: () => {},
+                    onTap: () => {
+                      showImagePickerOption(context),
+                    },
                     child: Image.asset(
                       'assets/images/update_image.png',
                       height: 32,
@@ -127,4 +129,52 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
     );
   }
+}
+
+void showImagePickerOption(BuildContext context) {
+  showModalBottomSheet(
+    backgroundColor: AppColors.cE8ECEC,
+    context: context,
+    builder: (BuildContext context) {
+      return SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height * 0.3,
+        child: Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: Row(
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () => {},
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.image,
+                        size: 70,
+                      ),
+                      Text('Gallery'),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: InkWell(
+                  onTap: () => {},
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.camera_alt,
+                        size: 70,
+                      ),
+                      Text('Camera'),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:mehdi0605/features/authentication/presentation/forget_password_screen.dart';
 import 'package:mehdi0605/features/home/presentation/settings_screen.dart';
+import 'package:mehdi0605/features/home/widgets/pick_image.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_question_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_suggested_answer.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_result_screen.dart';
@@ -29,6 +30,7 @@ final class Routes {
       '/oral_exam_suggested_answer_screen';
   static const String oralResultScreen = '/oral_result_screen';
   static const String settinstScreen = '/settings_screen';
+  static const String pickImage = '/pick_image';
 }
 
 final class RouteGenerator {
@@ -110,6 +112,13 @@ final class RouteGenerator {
           return CupertinoPageRoute(
               builder: (context) => const SettingsScreen());
         }
+      // case Routes.pickImage:
+      //   if (Platform.isAndroid) {
+      //     return _FadedTransitionRoute(
+      //         widget: const PickImage(), settings: settings);
+      //   } else {
+      //     return CupertinoPageRoute(builder: (context) => const PickImage());
+      //   }
 
       default:
         return null;
