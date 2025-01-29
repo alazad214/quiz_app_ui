@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:mehdi0605/features/human_embryology/presentation/human_embryology_flashcard_screen.dart';
-import 'package:mehdi0605/features/human_embryology/presentation/latin_tap_card.dart';
+import 'package:mehdi0605/features/human_embryology/presentation/latin_tap_card_screen.dart';
 import 'package:mehdi0605/features/human_embryology/presentation/result_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_question_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_suggested_answer.dart';
@@ -12,7 +12,7 @@ import '../features/authentication/presentation/otp_verification_screen.dart';
 import '../features/authentication/presentation/signup_screen.dart';
 import '../features/home/presentation/homescreen.dart';
 import '../features/home/presentation/settings_screen.dart';
-import '../features/human_embryology/presentation/_flash_tap_card_screen.dart';
+import '../features/human_embryology/presentation/flash_tap_card_screen.dart';
 
 final class Routes {
   static final Routes _routes = Routes._internal();
@@ -30,7 +30,7 @@ final class Routes {
       '/oral_exam_suggested_answer_screen';
   static const String oralResultScreen = '/oral_result_screen';
   static const String settinstScreen = '/settinst_Screen';
-  static const String tapCardScreen = '/tapCard_screen';
+  static const String flashTapCardScreen = '/tapCard_screen';
   static const String humanEmbryologyFlashcardScreen = '/humanEmbryology_Flashcard_Screen';
   static const String resultScreen = '/result_screen';
   static const String latinTapCard = '/latin_tap_card';
@@ -116,7 +116,7 @@ final class RouteGenerator {
               builder: (context) => const SettingsScreen());
         }
 
-      case Routes.tapCardScreen:
+      case Routes.flashTapCardScreen:
         if (Platform.isAndroid) {
           return _FadedTransitionRoute(
               widget:  FlashTapCardScreen(), settings: settings);

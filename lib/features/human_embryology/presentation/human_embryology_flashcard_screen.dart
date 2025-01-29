@@ -80,7 +80,7 @@ class _HumanEmbryologyFlashcardScreenState extends State<HumanEmbryologyFlashcar
                   onTap: () {
                     setState(() {
                       _selectedContainerIndex = 0;
-                      NavigationService.navigateTo(Routes.tapCardScreen);
+                      NavigationService.navigateTo(Routes.flashTapCardScreen);
                     });
                   }, img: Image.asset(Assets.icons.flashcard.path,width: 40.w,height: 40.h,),
                 ),
