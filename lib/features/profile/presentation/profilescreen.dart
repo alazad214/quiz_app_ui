@@ -154,7 +154,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               child: GestureDetector(
                                 onTap: () {
                                   NavigationService.navigateTo(
-                                      Routes.settinstScreen);
+                                      Routes.settingstScreen);
                                 },
                                 child: const Icon(
                                   Icons.settings_outlined,

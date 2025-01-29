@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';

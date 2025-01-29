@@ -56,6 +56,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Help.svg
   String get helpSvg => 'assets/icons/Help.svg';
 
+  /// File path: assets/icons/Home Icon.png
+  AssetGenImage get homeIcon =>
+      const AssetGenImage('assets/icons/Home Icon.png');
+
   /// File path: assets/icons/Home.png
   AssetGenImage get home => const AssetGenImage('assets/icons/Home.png');
 
@@ -94,16 +98,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/comment.png
   AssetGenImage get comment => const AssetGenImage('assets/icons/comment.png');
 
+  /// File path: assets/icons/community (2).png
+  AssetGenImage get community2 =>
+      const AssetGenImage('assets/icons/community (2).png');
+
   /// File path: assets/icons/dot.png
   AssetGenImage get dot => const AssetGenImage('assets/icons/dot.png');
-
-  /// File path: assets/icons/location.png
-  AssetGenImage get location =>
-      const AssetGenImage('assets/icons/location.png');
-
-  /// File path: assets/icons/medal-star.png
-  AssetGenImage get medalStar =>
-      const AssetGenImage('assets/icons/medal-star.png');
 
   /// File path: assets/icons/flashcard.png
   AssetGenImage get flashcard =>
@@ -113,6 +113,17 @@ class $AssetsIconsGen {
   AssetGenImage get flashcard2 =>
       const AssetGenImage('assets/icons/flashcard2.png');
 
+  /// File path: assets/icons/location.png
+  AssetGenImage get location =>
+      const AssetGenImage('assets/icons/location.png');
+
+  /// File path: assets/icons/mcq.png
+  AssetGenImage get mcq => const AssetGenImage('assets/icons/mcq.png');
+
+  /// File path: assets/icons/medal-star.png
+  AssetGenImage get medalStar =>
+      const AssetGenImage('assets/icons/medal-star.png');
+
   /// File path: assets/icons/message-minus.png
   AssetGenImage get messageMinus =>
       const AssetGenImage('assets/icons/message-minus.png');
@@ -120,6 +131,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notification.png
   AssetGenImage get notification =>
       const AssetGenImage('assets/icons/notification.png');
+
+  /// File path: assets/icons/oral.png
+  AssetGenImage get oral => const AssetGenImage('assets/icons/oral.png');
 
   /// File path: assets/icons/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/icons/profile.png');
@@ -144,6 +158,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/star.png
   AssetGenImage get star => const AssetGenImage('assets/icons/star.png');
 
+  /// File path: assets/icons/state.png
+  AssetGenImage get state => const AssetGenImage('assets/icons/state.png');
+
   /// File path: assets/icons/success.png
   AssetGenImage get success => const AssetGenImage('assets/icons/success.png');
 
@@ -160,6 +177,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/undo3.png
   AssetGenImage get undo3 => const AssetGenImage('assets/icons/undo3.png');
 
+  /// File path: assets/icons/webiner.png
+  AssetGenImage get webiner => const AssetGenImage('assets/icons/webiner.png');
+
   /// List of all assets
   List<dynamic> get values => [
         check,
@@ -167,6 +187,7 @@ class $AssetsIconsGen {
         googleSvg,
         helpPng,
         helpSvg,
+        homeIcon,
         home,
         alarmclock,
         arrowDown,
@@ -178,12 +199,16 @@ class $AssetsIconsGen {
         chatBox,
         closeCircle,
         comment,
+        community2,
         dot,
-        medalStar,
         flashcard,
         flashcard2,
+        location,
+        mcq,
+        medalStar,
         messageMinus,
         notification,
+        oral,
         profile,
         searchNormal,
         search,
@@ -191,11 +216,13 @@ class $AssetsIconsGen {
         share,
         shieldTick,
         star,
+        state,
         success,
         trippleArrow,
         undo,
         undo2,
-        undo3
+        undo3,
+        webiner
       ];
 }
 
