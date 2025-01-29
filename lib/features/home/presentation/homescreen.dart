@@ -122,6 +122,7 @@ class _HomescreenState extends State<Homescreen> {
                           child: Image.asset(
                             Assets.icons.notification.path,
                             height: 25.h,
+                          
                           ),
                         ),
                       ],

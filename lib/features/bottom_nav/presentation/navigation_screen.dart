@@ -4,6 +4,7 @@ import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/features/home/presentation/homescreen.dart';
 import 'package:mehdi0605/features/profile/presentation/profilescreen.dart';
+import 'package:mehdi0605/features/webinar/presentation/webinar_screen.dart';
 import 'package:mehdi0605/gen/assets.gen.dart';
 
 import '../../cummunity/presentation/community_screen.dart';
@@ -19,7 +20,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   final List<Widget> pages = [
     Homescreen(),
     CommunityScreen(),
-    CommunityScreen(),
+    WebinarScreen(),
     ProfilePage(),
   ];
 
