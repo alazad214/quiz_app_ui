@@ -28,7 +28,7 @@ class _FlipCardWidgetState extends State<FlipCardWidget> {
   ];
   @override
   Widget build(BuildContext context) {
-    return  FlipCard(
+    return FlipCard(
       direction: FlipDirection.HORIZONTAL, // Horizontal flip
       front: Card(
         color: Colors.white,
@@ -50,11 +50,9 @@ class _FlipCardWidgetState extends State<FlipCardWidget> {
                 ),
               ),
               SizedBox(height: 16.h),
-              Text(
-                  questions[currentIndex], // Displays the current question
+              Text(questions[currentIndex], // Displays the current question
                   textAlign: TextAlign.center,
-                  style: TextFontStyle.textStyle16w500c333333
-              ),
+                  style: TextFontStyle.textStyle16w500c333333),
             ],
           ),
         ),
@@ -65,7 +63,7 @@ class _FlipCardWidgetState extends State<FlipCardWidget> {
           borderRadius: BorderRadius.circular(16.r),
         ),
         child: Padding(
-          padding:  EdgeInsets.symmetric(vertical: 100.h, horizontal: 24.h),
+          padding: EdgeInsets.symmetric(vertical: 100.h, horizontal: 24.h),
           child: Center(
             child: Text(
               "This is the answer to the question.",

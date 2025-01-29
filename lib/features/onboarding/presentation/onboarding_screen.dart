@@ -75,24 +75,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
               Positioned(
-                bottom: 88,
+                bottom: 80,
                 left: 0,
                 right: 0,
                 child: Center(
-                  child: SliderButton(
-                    action: () async {
-                      NavigationService.navigateToReplacement(Routes.login);
-                      return true;
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment
-                            .spaceBetween, // Evenly distribute widgets
-                        children: [
-                          Container(
+                  child: Column(
+                    children: [
+                      SliderButton(
+                        action: () async {
+                          NavigationService.navigateToReplacement(Routes.login);
+                          return true;
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
                             height: 80,
-                            width: 160,
+                            width: 140,
                             decoration: BoxDecoration(
                               color: AppColors.cButtonColor,
                               borderRadius: BorderRadius.circular(16),
@@ -111,19 +109,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               ),
                             ),
                           ),
-                          UIHelper.horizontalSpace(10.w)
-                        ],
+                        ),
+
+                        // icon needs to be fixed------------------------>
+
+                        icon: Image.asset(
+                          Assets.icons.trippleArrow.path,
+                        ),
+                        width: 350.w,
+                        radius: 16,
+                        backgroundColor: AppColors.primaryColor,
                       ),
-                    ),
-
-                    // icon needs to be fixed------------------------>
-
-                    icon: Image.asset(
-                      Assets.icons.trippleArrow.path,
-                    ),
-                    width: 380,
-                    radius: 16,
-                    backgroundColor: AppColors.primaryColor,
+                    ],
                   ),
                 ),
               ),
