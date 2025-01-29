@@ -16,6 +16,43 @@ class McqResultScreen2 extends StatefulWidget {
 
 class _McqResultScreen2State extends State<McqResultScreen2> {
   int? selectedOption = 3;
+
+  Set<Map<String, Object>> questions = {
+    {
+      'question': 'What is the primary function of the heart?',
+      'options': [
+        {'option': 'Option 1', 'isCorrect': false},
+        {'option': 'Option 2', 'isCorrect': false},
+        {'option': 'Option 3', 'isCorrect': true},
+        {'option': 'Option 4', 'isCorrect': false},
+      ],
+      'explanation':
+          'This exam contains 60 questions. You have a total time of 2 hours to complete the exam. The timer will begin as soon as you start, and it will run continuously until the time is up.'
+    },
+    {
+      'question': 'What is the primary function of the heart?',
+      'options': [
+        {'option': 'Option 1', 'isCorrect': false},
+        {'option': 'Option 2', 'isCorrect': false},
+        {'option': 'Option 3', 'isCorrect': true},
+        {'option': 'Option 4', 'isCorrect': false},
+      ],
+      'explanation':
+          'This exam contains 60 questions. You have a total time of 2 hours to complete the exam. The timer will begin as soon as you start, and it will run continuously until the time is up.'
+    },
+    {
+      'question': 'What is the primary function of the heart?',
+      'options': [
+        {'option': 'Option 1', 'isCorrect': false},
+        {'option': 'Option 2', 'isCorrect': false},
+        {'option': 'Option 3', 'isCorrect': true},
+        {'option': 'Option 4', 'isCorrect': false},
+      ],
+      'explanation':
+          'This exam contains 60 questions. You have a total time of 2 hours to complete the exam. The timer will begin as soon as you start, and it will run continuously until the time is up.'
+    },
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,10 +159,11 @@ class _McqResultScreen2State extends State<McqResultScreen2> {
               style: TextFontStyle.textStyle16w500c00BFA6,
               children: [
                 TextSpan(
-                    text:
-                        'This exam contains 60 questions. You have a total time of 2 hours to complete the exam. The timer will begin as soon as you start, and it will run continuously until the time is up. ',
-                    style: TextFontStyle.textStyle16w500c00BFA6
-                        .copyWith(color: AppColors.c333333)),
+                  text:
+                      'This exam contains 60 questions. You have a total time of 2 hours to complete the exam. The timer will begin as soon as you start, and it will run continuously until the time is up. ',
+                  style: TextFontStyle.textStyle16w500c00BFA6
+                      .copyWith(color: AppColors.c333333),
+                ),
               ],
             ),
           ),
