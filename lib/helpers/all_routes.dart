@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
-
 import 'package:mehdi0605/features/human_embryology/presentation/human_embryology_flashcard_screen.dart';
+import 'package:mehdi0605/features/human_embryology/presentation/latin_tap_card.dart';
 import 'package:mehdi0605/features/human_embryology/presentation/result_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_question_screen.dart';
 import 'package:mehdi0605/features/oral_exam/presentation/oral_exam_suggested_answer.dart';
@@ -12,8 +12,6 @@ import '../features/authentication/presentation/new_password.dart';
 import '../features/authentication/presentation/otp_verification_screen.dart';
 import '../features/authentication/presentation/signup_screen.dart';
 import '../features/home/presentation/homescreen.dart';
-
-import '../features/human_embryology/presentation/tap_card_screen.dart';
 
 final class Routes {
   static final Routes _routes = Routes._internal();
@@ -33,8 +31,8 @@ final class Routes {
   static const String settinstScreen = '/settings_screen';
   static const String tapCardScreen = '/tap_card_screen';
   static const String resultScreen = '/result_screen';
-  static const String humanEmbryologyFlashcardScreen =
-      '/human_embryology_flashcard_screen';
+  static const String latinTapCard = '/latinTap_Card';
+  static const String humanEmbryologyFlashcardScreen = '/humanEmbryologyFlashcard_Screen';
 }
 
 final class RouteGenerator {
@@ -123,13 +121,7 @@ final class RouteGenerator {
       //     return CupertinoPageRoute(builder: (context) => const PickImage());
       //   }
 
-      case Routes.tapCardScreen:
-        if (Platform.isAndroid) {
-          return _FadedTransitionRoute(
-              widget: TapCardScreen(), settings: settings);
-        } else {
-          return CupertinoPageRoute(builder: (context) => TapCardScreen());
-        }
+
       case Routes.humanEmbryologyFlashcardScreen:
         if (Platform.isAndroid) {
           return _FadedTransitionRoute(
@@ -145,6 +137,14 @@ final class RouteGenerator {
               widget: ResultScreen(), settings: settings);
         } else {
           return CupertinoPageRoute(builder: (context) => ResultScreen());
+        }
+
+      case Routes.latinTapCard:
+        if (Platform.isAndroid) {
+          return _FadedTransitionRoute(
+              widget: LatinTapCardScreen(), settings: settings);
+        } else {
+          return CupertinoPageRoute(builder: (context) => LatinTapCardScreen());
         }
 
       default:

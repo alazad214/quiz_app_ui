@@ -6,7 +6,6 @@ import 'package:mehdi0605/features/human_embryology/presentation/widget/flash_ca
 import 'package:mehdi0605/features/human_embryology/presentation/widget/learn_exam_button.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
-
 import '../../../common_widgets/custom_appbar.dart';
 import '../../../constants/app_colors.dart';
 import '../../../helpers/all_routes.dart';
@@ -87,6 +86,7 @@ class _HumanEmbryologyFlashcardScreenState
                   NavigationService.navigateTo(Routes.tapCardScreen);
                 });
               },
+              img: null,
             ),
             UIHelper.verticalSpace(16.h),
             FlashCardLatinWidget(
@@ -99,6 +99,7 @@ class _HumanEmbryologyFlashcardScreenState
                   _selectedContainerIndex = 1;
                 });
               },
+              img: null,
             ),
           ],
         ),
