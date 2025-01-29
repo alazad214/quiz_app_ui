@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
+import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/all_routes.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
@@ -131,17 +132,17 @@ class _ProfilePageState extends State<ProfilePage> {
                                     )
                                   : CircleAvatar(
                                       radius: 34,
-                                      backgroundImage: const AssetImage(
-                                          'assets/images/person.png'),
+                                      backgroundImage:
+                                          AssetImage(Assets.images.person.path),
                                     ),
                               GestureDetector(
                                 onTap: () {
                                   showImagePickerOption(context);
                                 },
                                 child: Image.asset(
-                                  'assets/images/update_image.png',
-                                  height: 32,
-                                  width: 32,
+                                  Assets.images.updateImage.path,
+                                  height: 32.h,
+                                  width: 32.w,
                                 ),
                               ),
                             ],
@@ -149,14 +150,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                       Text(
-                        'Sayeda Fatema',
+                        'Asif Ullah',
                         style: TextFontStyle.headline24w500c0CC0DF,
                       ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Image.asset(
-                            'assets/icons/location.png',
+                            Assets.icons.location.path,
                             height: 16.h,
                             width: 16.w,
                           ),
@@ -178,9 +179,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         onTap: () {
                           NavigationService.navigateTo(Routes.settinstScreen);
                         },
-                        child: const Icon(
+                        child: Icon(
                           Icons.settings_outlined,
-                          size: 24,
+                          size: 24.sp,
                           color: AppColors.c767676,
                         ),
                       ),
@@ -294,6 +295,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: AppColors.cE6F9F6,
                 ),
               ),
+              UIHelper.verticalSpaceMediumLarge,
               customButton(
                   height: 50.h,
                   borderRadius: 16.r,
