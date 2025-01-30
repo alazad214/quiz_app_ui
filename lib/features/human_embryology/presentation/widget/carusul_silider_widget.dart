@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../gen/assets.gen.dart';
@@ -15,60 +16,53 @@ class CarouselSliderWidget extends StatefulWidget {
 
 class _CarouselSliderWidgetState extends State<CarouselSliderWidget> {
   final ValueNotifier<int> _selectedIndex = ValueNotifier(0);
+  int _currentIndex = 0;
+
+  final List<String> imgList = [
+    Assets.images.carasul.path,
+    Assets.images.carasul.path,
+    Assets.images.carasul.path,
+    Assets.images.carasul.path,
+    Assets.images.carasul.path,
+  ];
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CarouselSlider(
-          options: CarouselOptions(
-            autoPlay: true,
-            height: 200,
-            viewportFraction: 1,
-            onPageChanged: (currentIndex, reason) {
-              _selectedIndex.value = currentIndex;
-            },
-          ),
-          items: [1, 2, 3, 4, 5].map((i) {
-            return Builder(
-              builder: (BuildContext context) {
-                return Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: BoxDecoration(
-                      color: AppColors.cFFFFFF,
-                      borderRadius: BorderRadius.circular(12),
-                      image: DecorationImage(
-                          image: AssetImage(
-                            Assets.images.carasul.path,
-                          ),
-                          fit: BoxFit.cover)),
-                );
-              },
+          items: imgList.map((item) {
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(10.r),
+              child: Image.asset(
+                item, fit: BoxFit.cover, width: double.maxFinite,
+              ),
             );
           }).toList(),
+          options: CarouselOptions(
+            autoPlay: true,
+            autoPlayAnimationDuration: const Duration(milliseconds: 200),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeCenterPage: true,
+            viewportFraction: 1,
+            onPageChanged: (index, reason) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+          ),
         ),
-        UIHelper.verticalSpace(16.h),
-        ValueListenableBuilder(
-            valueListenable: _selectedIndex,
-            builder: (context, value, _) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (int i = 0; i < 5; i++)
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 1),
-                      width: 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                          color: value == i
-                              ? AppColors.primaryColor
-                              : Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: Colors.grey)),
-                    )
-                ],
-              );
-            }),
+        UIHelper.verticalSpace(10.h),
+        AnimatedSmoothIndicator(
+          activeIndex: _currentIndex,
+          count: imgList.length,
+          effect: const WormEffect(
+            dotHeight: 8,
+            dotWidth: 8,
+            spacing: 8,
+            dotColor: AppColors.cC0C0C0,
+            activeDotColor:AppColors.primaryColor,
+          ),
+        ),
       ],
     );
   }
