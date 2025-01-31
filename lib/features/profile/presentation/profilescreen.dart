@@ -1,9 +1,5 @@
-import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
@@ -20,93 +16,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  Uint8List? _image;
-  File? selectedImage;
-
-  // Function to pick image from gallery
-  Future _pickImageFromGallery() async {
-    final pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        selectedImage = File(pickedFile.path);
-        _image = selectedImage!.readAsBytesSync();
-      });
-    }
-  }
-
-  // Function to pick image from camera
-  Future _pickImageFromCamera() async {
-    final pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.camera);
-    if (pickedFile != null) {
-      setState(() {
-        selectedImage = File(pickedFile.path);
-        _image = selectedImage!.readAsBytesSync();
-      });
-    }
-  }
-
-  // Show the bottom sheet with options to choose from
-  void showImagePickerOption(BuildContext context) {
-    showModalBottomSheet(
-      backgroundColor: AppColors.cE8ECEC,
-      context: context,
-      builder: (BuildContext context) {
-        return SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.27,
-          child: Padding(
-            padding: const EdgeInsets.all(50.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(10.r),
-                    onTap: () {
-                      _pickImageFromGallery();
-                      Navigator.pop(context);
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.image,
-                          size: 70,
-                        ),
-                        Text('Gallery'),
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(10.r),
-                    focusColor: AppColors.primaryColor,
-                    onTap: () {
-                      _pickImageFromCamera();
-                      Navigator.pop(context);
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.camera_alt,
-                          size: 70,
-                        ),
-                        Text('Camera'),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,76 +26,70 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               Row(
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Stack(
-                            alignment: Alignment.bottomRight,
-                            children: [
-                              _image != null
-                                  ? CircleAvatar(
-                                      radius: 34,
-                                      backgroundImage: MemoryImage(_image!),
-                                    )
-                                  : CircleAvatar(
-                                      radius: 34,
-                                      backgroundImage:
-                                          AssetImage(Assets.images.person.path),
-                                    ),
-                              GestureDetector(
-                                onTap: () {
-                                  showImagePickerOption(context);
-
-                                  NavigationService.navigateTo(
-                                      Routes.settingstScreen);
-                                },
-                                child: Image.asset(
-                                  Assets.images.updateImage.path,
-                                  height: 32.h,
-                                  width: 32.w,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Text(
-                        'Asif Ullah',
-                        style: TextFontStyle.headline24w500c0CC0DF,
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Image.asset(
-                            Assets.icons.location.path,
-                            height: 16.h,
-                            width: 16.w,
-                          ),
-                          UIHelper.horizontalSpace(2.w),
-                          Text(
-                            'myemail@gmail.com',
-                            style:
-                                TextFontStyle.textStyle14w400c767676helvatica,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
                   Flexible(
-                    child: CircleAvatar(
-                      radius: 16.r,
-                      backgroundColor: AppColors.cE8ECEC,
-                      child: GestureDetector(
-                        onTap: () {
-                          NavigationService.navigateTo(Routes.settingstScreen);
-                        },
-                        child: Icon(
-                          Icons.settings_outlined,
-                          size: 24.sp,
-                          color: AppColors.c767676,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Stack(
+                              alignment: Alignment.bottomRight,
+                              children: [
+                                CircleAvatar(
+                                  radius: 45.sp,
+                                  backgroundImage:
+                                      AssetImage(Assets.images.person.path),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    NavigationService.navigateTo(
+                                        Routes.settingstScreen);
+                                  },
+                                  child: Image.asset(
+                                    Assets.images.updateImage.path,
+                                    height: 32.h,
+                                    width: 32.w,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
+                        Text(
+                          'Asif Ullah',
+                          style: TextFontStyle.headline24w500c0CC0DF,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Image.asset(
+                              Assets.icons.location.path,
+                              height: 16.h,
+                              width: 16.w,
+                            ),
+                            UIHelper.horizontalSpace(2.w),
+                            Text(
+                              'myemail@gmail.com',
+                              style:
+                                  TextFontStyle.textStyle14w400c767676helvatica,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+             
+                  CircleAvatar(
+                    radius: 16.r,
+                    backgroundColor: AppColors.cE8ECEC,
+                    child: GestureDetector(
+                      onTap: () {
+                        NavigationService.navigateTo(Routes.settingstScreen);
+                      },
+                      child: Icon(
+                        Icons.settings_outlined,
+                        size: 24.sp,
+                        color: AppColors.c767676,
                       ),
                     ),
                   ),

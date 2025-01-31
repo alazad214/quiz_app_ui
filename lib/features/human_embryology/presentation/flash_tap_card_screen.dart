@@ -5,7 +5,6 @@ import 'package:mehdi0605/features/human_embryology/presentation/widget/flip_car
 import 'package:mehdi0605/helpers/all_routes.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
-
 import '../../../constants/text_font_style.dart';
 import '../../../gen/assets.gen.dart';
 
@@ -23,7 +22,7 @@ class _FlashTapCardScreenState extends State<FlashTapCardScreen> {
       setState(() {
         currentIndex++;
       });
-    }else{
+    } else {
       NavigationService.navigateTo(Routes.resultScreen);
     }
   }
@@ -79,19 +78,30 @@ class _FlashTapCardScreenState extends State<FlashTapCardScreen> {
                 style: TextFontStyle.textStyle14w400c767676helvatica,
               ),
             ),
-           UIHelper.verticalSpace(16.h),
+            UIHelper.verticalSpace(16.h),
             FlipCardWidget(),
-            // Spacer(),
+
             UIHelper.verticalSpace(40.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
-                    onTap: goToPreviousQuestion,
-                    child: Image.asset(Assets.icons.undo2.path, width: 24.w)),
+                  onTap: goToPreviousQuestion,
+                  child: Image.asset(
+                    Assets.icons.undo2.path,
+                    width: 24.w,
+                    color: (currentIndex >= 1)
+                        ? AppColors.c000000
+                        : Colors.black26,
+                  ),
+                ),
                 GestureDetector(
-                    onTap: goToNextQuestion,
-                    child: Image.asset(Assets.icons.undo3.path, width: 24.w)),
+                  onTap: goToNextQuestion,
+                  child: Image.asset(
+                    Assets.icons.undo3.path,
+                    width: 24.w,
+                  ),
+                ),
               ],
             ),
           ],

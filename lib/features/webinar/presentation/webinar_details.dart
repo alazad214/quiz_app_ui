@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:mehdi0605/common_widgets/custom_appbar.dart';
 import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
+import 'package:mehdi0605/features/bottom_nav/presentation/navigation_screen.dart';
+import 'package:mehdi0605/features/webinar/widgets/webiner_popup.dart';
 import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
 
@@ -41,13 +45,10 @@ class _WebinarDetailsState extends State<WebinarDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Webinar',
-          style: TextFontStyle.textStyle16w500c333333,
-        ),
-        centerTitle: true,
-      ),
+
+
+
+      appBar: CustomAppbar(title: 'Webinar Details'),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,7 +161,9 @@ class _WebinarDetailsState extends State<WebinarDetails> {
                       name: 'Interested',
                       textStyle: TextFontStyle.textStyle16w500cFFFFFF,
                       onCallBack: () {
-                        // Handle update button logic here
+                        webinerPopup(context, () {
+                          Get.offAll(() => NavigationScreen());
+                        });
                       },
                       context: context),
                 ],

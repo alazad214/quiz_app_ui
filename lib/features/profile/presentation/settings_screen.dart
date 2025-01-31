@@ -9,6 +9,7 @@ import 'package:mehdi0605/common_widgets/custom_button.dart';
 import 'package:mehdi0605/common_widgets/custom_textfeild.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
+import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -50,7 +51,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
   }
 
-  // Show image picker options for gallery or camera
   void showImagePickerOption(BuildContext context) {
     showModalBottomSheet(
       backgroundColor: AppColors.cE8ECEC,
@@ -60,7 +60,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.27,
           child: Padding(
-            padding: const EdgeInsets.all(50.0),
+            padding: EdgeInsets.all(50.sp),
             child: Row(
               children: [
                 Expanded(
@@ -75,7 +75,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       children: [
                         Icon(
                           Icons.image,
-                          size: 70,
+                          size: 70.sp,
                         ),
                         Text('Gallery'),
                       ],
@@ -95,7 +95,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       children: [
                         Icon(
                           Icons.camera_alt,
-                          size: 70,
+                          size: 70.sp,
                         ),
                         Text('Camera'),
                       ],
@@ -117,20 +117,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16.sp),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
-                alignment: Alignment
-                    .bottomRight, // Adjusts the alignment of the children in the stack
+                alignment: Alignment.bottomRight,
                 children: [
                   CircleAvatar(
-                    radius: 45, // Background circle size
+                    radius: 45.sp,
                     backgroundImage: _image != null
-                        ? MemoryImage(
-                            _image!) // Display the selected image if available
-                        : AssetImage('assets/images/person.png')
+                        ? MemoryImage(_image!)
+                        : AssetImage(Assets.images.person.path)
                             as ImageProvider,
                   ),
                   GestureDetector(
@@ -138,7 +136,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       showImagePickerOption(context),
                     },
                     child: Image.asset(
-                      'assets/images/update_image.png',
+                      Assets.images.updateImage.path,
                       height: 32,
                       width: 32,
                     ),

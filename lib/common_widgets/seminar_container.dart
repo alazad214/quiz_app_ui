@@ -22,21 +22,18 @@ class _SeminarContainerState extends State<SeminarContainer> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // First container (bottom container)
         Container(
-          width: 340.w,
-          height: 149.w,
+          margin: EdgeInsets.only(bottom: 10),
+          width: double.infinity,
+          height: 160.w,
           decoration: BoxDecoration(
             color: AppColors.cFFFFFF,
             borderRadius: BorderRadius.all(Radius.circular(12.r)),
           ),
         ),
-        // Second container (top container with an image)
         Positioned(
-          top: 10
-              .h, // You can adjust this for the vertical distance between the two containers
-          left: 10
-              .w, // You can adjust this for the horizontal position of the second container
+          top: 10.h,
+          left: 10.w,
           child: Stack(
             children: [
               Row(
@@ -51,9 +48,8 @@ class _SeminarContainerState extends State<SeminarContainer> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(12.r)),
                       child: Image.asset(
-                        'assets/images/seminar.png', // Replace with your image path
-                        fit: BoxFit
-                            .cover, // This will make sure the image covers the container size
+                        'assets/images/seminar.png',
+                        fit: BoxFit.cover,
                         width: 151.w,
                         height: 131.h,
                       ),

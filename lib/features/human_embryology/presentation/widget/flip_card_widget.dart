@@ -13,7 +13,7 @@ class FlipCardWidget extends StatefulWidget {
 }
 
 class _FlipCardWidgetState extends State<FlipCardWidget> {
-  int currentIndex = 0;
+  int currentIndex = 1;
   final List<String> questions = [
     "Embryology is the branch of biology that studies the formation, early growth, and development of living organisms.",
     "What is the powerhouse of the cell?",
@@ -29,8 +29,27 @@ class _FlipCardWidgetState extends State<FlipCardWidget> {
   @override
   Widget build(BuildContext context) {
     return FlipCard(
-      direction: FlipDirection.HORIZONTAL, // Horizontal flip
+      direction: FlipDirection.HORIZONTAL,
       front: Card(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 24.h),
+          child: Center(
+            child: Text(
+              "This is the answer to the question.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16.sp,
+                color: Colors.black87,
+              ),
+            ),
+          ),
+        ),
+      ),
+      back: Card(
         color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
@@ -43,36 +62,17 @@ class _FlipCardWidgetState extends State<FlipCardWidget> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(16.r),
                 child: Image.asset(
-                  Assets.images.carasul.path, // Replace with your asset
+                  Assets.images.carasul.path,
                   height: 200.h,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
               ),
               SizedBox(height: 16.h),
-              Text(questions[currentIndex], // Displays the current question
+              Text(questions[currentIndex],
                   textAlign: TextAlign.center,
                   style: TextFontStyle.textStyle16w500c333333),
             ],
-          ),
-        ),
-      ),
-      back: Card(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 100.h, horizontal: 24.h),
-          child: Center(
-            child: Text(
-              "This is the answer to the question.",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16.sp,
-                color: Colors.black87,
-              ),
-            ),
           ),
         ),
       ),

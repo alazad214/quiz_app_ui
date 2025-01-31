@@ -4,7 +4,6 @@ import 'package:mehdi0605/common_widgets/seminar_container.dart';
 import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/helpers/all_routes.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
-import 'package:mehdi0605/helpers/ui_helpers.dart';
 
 class WebinarScreen extends StatefulWidget {
   const WebinarScreen({super.key});
@@ -63,29 +62,25 @@ class _WebinarScreenState extends State<WebinarScreen> {
         ),
         centerTitle: true,
       ),
-      body: Center(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(15.sp),
         child: Column(
           children: [
-            UIHelper.verticalSpace(24.h),
-            GestureDetector(
-              onTap: () {
-                NavigationService.navigateTo(Routes.webinarDetails);
-              },
-              child: SeminarContainer(
-                carouselLength: carouselData.length,
-                carouselImage: carouselData[_currentIndex]['image'],
-              ),
-            ),
-            UIHelper.verticalSpace(8.h),
-            SeminarContainer(
-              carouselLength: carouselData.length,
-              carouselImage: carouselData[_currentIndex]['image'],
-            ),
-            UIHelper.verticalSpace(8.h),
-            SeminarContainer(
-              carouselLength: carouselData.length,
-              carouselImage: carouselData[_currentIndex]['image'],
-            ),
+            ListView.builder(
+                itemCount: 4,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      NavigationService.navigateTo(Routes.webinarDetails);
+                    },
+                    child: SeminarContainer(
+                      carouselLength: carouselData.length,
+                      carouselImage: carouselData[_currentIndex]['image'],
+                    ),
+                  );
+                })
           ],
         ),
       ),

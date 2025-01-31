@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:mehdi0605/common_widgets/seminar_container.dart';
 import 'package:mehdi0605/constants/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:mehdi0605/features/cummunity/presentation/community_comment_screen.dart';
 import 'package:mehdi0605/features/home/widgets/choice_topic_items.dart';
 import 'package:mehdi0605/features/notification/presentation/notification_screen.dart';
+import 'package:mehdi0605/features/webinar/presentation/webinar_details.dart';
 import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/ui_helpers.dart';
 import '../../../constants/text_font_style.dart';
@@ -122,7 +124,6 @@ class _HomescreenState extends State<Homescreen> {
                           child: Image.asset(
                             Assets.icons.notification.path,
                             height: 25.h,
-                          
                           ),
                         ),
                       ],
@@ -185,6 +186,7 @@ class _HomescreenState extends State<Homescreen> {
               UIHelper.verticalSpace(16.h),
               Container(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CarouselSlider(
                       options: CarouselOptions(
@@ -203,11 +205,12 @@ class _HomescreenState extends State<Homescreen> {
                       items: carouselData.map((carouselItem) {
                         return Builder(
                           builder: (BuildContext context) {
-                            return Padding(
-                              padding: EdgeInsets.symmetric(vertical: 8.sp),
+                            return InkWell(
+                              onTap: () {},
                               child: Container(
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.h),
                                   color: AppColors.cFFFFFF,
@@ -228,8 +231,7 @@ class _HomescreenState extends State<Homescreen> {
                                               Image.asset(
                                                 carouselItem['image'],
                                                 height: 26.h,
-                                                width:
-                                                    26.w, // Adjust image height
+                                                width: 26.w,
                                               ),
                                               Padding(
                                                 padding:
@@ -285,9 +287,15 @@ class _HomescreenState extends State<Homescreen> {
                                                 height: 20,
                                               ),
                                               UIHelper.horizontalSpace(10),
-                                              Image.asset(
-                                                Assets.icons.comment.path,
-                                                height: 25,
+                                              InkWell(
+                                                onTap: () {
+                                                  Get.to(() =>
+                                                      CommunityCommentScreen());
+                                                },
+                                                child: Image.asset(
+                                                  Assets.icons.comment.path,
+                                                  height: 25,
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -303,6 +311,14 @@ class _HomescreenState extends State<Homescreen> {
                       }).toList(),
                     ),
                     UIHelper.verticalSpace(16.h),
+                  ],
+                ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -323,19 +339,25 @@ class _HomescreenState extends State<Homescreen> {
                       ],
                     ),
                     UIHelper.verticalSpace(16.h),
-                    SeminarContainer(
-                      carouselLength: carouselData.length,
-                      carouselImage: carouselData[_currentIndex]['image'],
-                    ),
-                    UIHelper.verticalSpace(8.h),
-                    SeminarContainer(
-                      carouselLength: carouselData.length,
-                      carouselImage: carouselData[_currentIndex]['image'],
-                    ),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: 3,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (_, index) {
+                          return InkWell(
+                            onTap: (){
+                              Get.to(()=>WebinarDetails());
+                            },
+                            child: SeminarContainer(
+                              carouselLength: carouselData.length,
+                              carouselImage: carouselData[_currentIndex]['image'],
+                            ),
+                          );
+                        }),
                     UIHelper.verticalSpace(30.h),
                   ],
                 ),
-              ),
+              )
             ],
           ),
         ),
