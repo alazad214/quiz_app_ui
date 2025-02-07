@@ -5,7 +5,6 @@ import 'package:mehdi0605/constants/text_font_style.dart';
 import 'package:mehdi0605/gen/assets.gen.dart';
 import 'package:mehdi0605/helpers/all_routes.dart';
 import 'package:mehdi0605/helpers/navigation_service.dart';
-import 'package:mehdi0605/helpers/ui_helpers.dart';
 import 'package:slider_button/slider_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -19,112 +18,98 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          Stack(
-            children: [
-              Container(
-                height: MediaQuery.of(context).size.height,
-                child: Image.asset(
-                  Assets.images.welcomeImage.path,
-                  fit: BoxFit.cover,
-                ),
+          SizedBox.expand(
+            child: Image.asset(
+              Assets.images.welcomeImage.path,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: EdgeInsets.only(top: 60.h),
+              child: SizedBox(
+                height: 50,
+                width: 204,
+                child: Image.asset(Assets.images.onBoardingLogo.path),
               ),
-              Center(
-                child: Column(
-                  children: [
-                    UIHelper.verticalSpace(60.h),
-                    SizedBox(
-                      height: 50,
-                      width: 204,
-                      child: Image.asset(Assets.images.onBoardingLogo.path),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                bottom: 252, // Adjust this value as needed
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Text(
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 50.h),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  /// 🔹 Title
+                  Text(
                     'Prepare with Confidence',
+                    textAlign: TextAlign.center,
                     style: TextFontStyle.textStyle26w700cF5F5F5,
                   ),
-                ),
-              ),
-              Positioned(
-                bottom: 156, // Adjust this value as needed
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Explore our exam simulations and practice questions before you buy. Take the first step towards acing your exams!',
-                      style: TextStyle(
-                        fontFamily: 'HelveticaNeueRoman.otf',
-                        fontSize: 16.sp,
-                        color: AppColors.cF5F5F5,
-                        fontWeight: FontWeight.w300,
-                        fontStyle: FontStyle.normal,
-                      ),
-                      textAlign: TextAlign.center,
+
+                  SizedBox(height: 10.h),
+
+                  /// 🔹 Description
+                  Text(
+                    'Explore our exam simulations and practice questions before you buy. '
+                    'Take the first step towards acing your exams!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'HelveticaNeueRoman',
+                      fontSize: 16.sp,
+                      color: AppColors.cF5F5F5,
+                      fontWeight: FontWeight.w300,
                     ),
                   ),
-                ),
-              ),
-              Positioned(
-                bottom: 80,
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Column(
+
+                  SizedBox(height: 20.h),
+
+                  Column(
                     children: [
-                      SliderButton(
-                        action: () async {
-                          NavigationService.navigateToReplacement(Routes.login);
-                          return true;
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 80,
-                            width: 140,
-                            decoration: BoxDecoration(
-                              color: AppColors.cButtonColor,
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Get Started",
-                                style: TextStyle(
-                                  fontFamily: TextFontStyle
-                                      .textStyle16w400c5C5C5C.fontFamily,
-                                  color: AppColors.cFFFFFF,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17,
-                                  fontStyle: FontStyle.normal,
+                      Container(
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: SliderButton(
+                          action: () async {
+                            NavigationService.navigateToReplacement(
+                                Routes.login);
+                            return true;
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: 80,
+                              width: 140,
+                              decoration: BoxDecoration(
+                                color: AppColors.cButtonColor,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Get Started",
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextFontStyle.textStyle16w400c5C5C5C
+                                      .copyWith(color: AppColors.cWhite),
                                 ),
                               ),
                             ),
                           ),
+                          width: 350.w,
+                          radius: 16,
+                          backgroundColor: AppColors.primaryColor,
                         ),
-
-                        // icon needs to be fixed------------------------>
-
-                        icon: Image.asset(
-                          Assets.icons.trippleArrow.path,
-                        ),
-                        width: 350.w,
-                        radius: 16,
-                        backgroundColor: AppColors.primaryColor,
                       ),
                     ],
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ],
       ),

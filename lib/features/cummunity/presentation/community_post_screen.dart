@@ -88,27 +88,55 @@ class _CommunityPostScreenState extends State<CommunityPostScreen> {
                 mainAxisSpacing: 10,
               ),
               itemBuilder: (BuildContext context, index) {
-                return Container(
-                  height: 80.h,
-                  width: 80.w,
-                  decoration: BoxDecoration(
-                    color: AppColors.cWhite,
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: kIsWeb
-                        ? Image.network(selectedImages[index].path,fit: BoxFit.cover)
-                        : Image.file(selectedImages[index], fit: BoxFit.cover),
-                  ),
+                return Stack(
+                  children: [
+                    Container(
+                      height: 80.h,
+                      width: 80.w,
+                      decoration: BoxDecoration(
+                        color: AppColors.cWhite,
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: kIsWeb
+                            ? Image.network(selectedImages[index].path,fit: BoxFit.cover)
+                            : Image.file(selectedImages[index], fit: BoxFit.cover),
+                      ),
+                    ),
+                    Positioned(
+                      top: -50,
+                        bottom: 20,
+                        child: GestureDetector(
+                          onTap:(){
+                            selectedImages.removeAt(index);
+                            setState(() {
+                            });
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black54,
+                              shape: BoxShape.circle,
+                            ),
+                             child: const Icon(
+                            Icons.close,
+                          color: Colors.white,
+                          size: 20,
+                                          ),
+                          ),
+                        ))
+                  ]
                 );
               },
             ),
             SizedBox(height: Get.height / 2.8),
-            customButton(
-              name: 'Submit',
-              onCallBack: () {},
-              context: context,
+            Padding(
+              padding:  EdgeInsets.only(bottom: 50.sp),
+              child: customButton(
+                name: 'Submit',
+                onCallBack: () {},
+                context: context,
+              ),
             )
           ],
         ),
@@ -131,5 +159,4 @@ class _CommunityPostScreenState extends State<CommunityPostScreen> {
           const SnackBar(content: Text('Nothing is selected')));
     }
   }
-
 }

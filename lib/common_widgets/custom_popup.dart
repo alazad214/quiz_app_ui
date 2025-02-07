@@ -5,7 +5,6 @@ import 'package:mehdi0605/common_widgets/custom_button.dart';
 import '../constants/text_font_style.dart';
 import '../helpers/ui_helpers.dart';
 
-
 void customPopup(
   BuildContext context,
   String title,

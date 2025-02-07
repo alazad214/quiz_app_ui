@@ -178,10 +178,8 @@ class _HomescreenState extends State<Homescreen> {
               UIHelper.verticalSpace(16.h),
               Padding(
                 padding: const EdgeInsets.only(left: 16),
-                child: Text(
-                  'Latest from Community',
-                  style: TextFontStyle.textStyle20w500c333333,
-                ),
+                child: Text('Latest from Community',
+                    style: TextFontStyle.textStyle20w500c333333),
               ),
               UIHelper.verticalSpace(16.h),
               Container(
@@ -345,12 +343,13 @@ class _HomescreenState extends State<Homescreen> {
                         physics: NeverScrollableScrollPhysics(),
                         itemBuilder: (_, index) {
                           return InkWell(
-                            onTap: (){
-                              Get.to(()=>WebinarDetails());
+                            onTap: () {
+                              Get.to(() => WebinarDetails());
                             },
                             child: SeminarContainer(
                               carouselLength: carouselData.length,
-                              carouselImage: carouselData[_currentIndex]['image'],
+                              carouselImage: carouselData[_currentIndex]
+                                  ['image'],
                             ),
                           );
                         }),
